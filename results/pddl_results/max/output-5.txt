@@ -1,0 +1,169 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/downward7/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-5.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.010s CPU, 0.002s wall-clock]
+Generated 38 rules.
+Computing model... [0.020s CPU, 0.026s wall-clock]
+1681 relevant atoms
+2304 auxiliary atoms
+3985 final queue length
+6389 total queue pushes
+Completing instantiation... [0.040s CPU, 0.037s wall-clock]
+Instantiating: [0.070s CPU, 0.068s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.006s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.010s CPU, 0.003s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+44 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.012s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.001s wall-clock]
+Translating task: [0.040s CPU, 0.040s wall-clock]
+1464 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+9 propositions removed
+Detecting unreachable propositions: [0.020s CPU, 0.022s wall-clock]
+Reordering and filtering variables...
+53 of 53 variables necessary.
+36 of 45 mutex groups necessary.
+888 of 888 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.010s CPU, 0.009s wall-clock]
+Translator variables: 53
+Translator derived variables: 0
+Translator facts: 412
+Translator goal facts: 8
+Translator mutex groups: 36
+Translator total mutex groups size: 360
+Translator operators: 888
+Translator axioms: 0
+Translator task size: 8465
+Translator peak memory: 184232 KB
+Writing output... [0.010s CPU, 0.008s wall-clock]
+Done! [0.160s CPU, 0.164s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/downward7/builds/release/bin/downward --search 'astar(hmax(verbosity=normal, transform=no_transform(), cache_estimates=true))' --internal-plan-file /work/bharath/sokoban/sokoban_results/max/plan-5.txt < output.sas
+[t=0.00239916s, 18652 KB] reading input...
+[t=0.0110946s, 19268 KB] done reading input!
+[t=0.0130705s, 19708 KB] Simplifying 4200 unary operators... done! [4200 unary operators]
+[t=0.0153019s, 19840 KB] time to simplify: 0.00233345s
+[t=0.0155744s, 19840 KB] Initializing HSP max heuristic...
+[t=0.0156336s, 19840 KB] Building successor generator...done!
+[t=0.0161671s, 19840 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.0161925s, 19840 KB] time for successor generation creation: 0.000452363s
+[t=0.016223s, 19840 KB] Variables: 53
+[t=0.0162474s, 19840 KB] FactPairs: 412
+[t=0.0163027s, 19840 KB] Bytes per state: 16
+[t=0.0163469s, 19840 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.016421s, 19840 KB] New best heuristic value for hmax(verbosity=normal,transform=no_transform(),cache_estimates=true): 1
+[t=0.0164478s, 19840 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0164727s, 19840 KB] f = 1, 1 evaluated, 0 expanded
+[t=0.0165023s, 19840 KB] Initial heuristic value for hmax(verbosity=normal,transform=no_transform(),cache_estimates=true): 1
+[t=0.0165268s, 19840 KB] pruning method: none
+[t=0.0174069s, 19840 KB] f = 3, 32 evaluated, 24 expanded
+[t=0.0252465s, 19840 KB] f = 4, 296 evaluated, 224 expanded
+[t=0.0835455s, 19940 KB] f = 5, 2232 evaluated, 1640 expanded
+[t=0.267225s, 20208 KB] f = 6, 8404 evaluated, 6376 expanded
+[t=0.735965s, 20880 KB] f = 7, 24300 evaluated, 18744 expanded
+[t=2.18038s, 23412 KB] f = 8, 73036 evaluated, 56216 expanded
+[t=2.99347s, 24496 KB] New best heuristic value for hmax(verbosity=normal,transform=no_transform(),cache_estimates=true): 0
+[t=2.99365s, 24496 KB] g=8, 103154 evaluated, 77097 expanded
+[t=2.99368s, 24496 KB] Solution found!
+[t=2.99374s, 24496 KB] Actual search time: 2.97721s
+move player-01 pos-2-2 pos-2-3 dir-down (0)
+move player-01 pos-2-3 pos-2-4 dir-down (0)
+push-to-goal player-01 stone-03 pos-2-4 pos-3-4 pos-4-4 dir-right (1)
+move player-01 pos-3-4 pos-3-3 dir-up (0)
+move player-01 pos-3-3 pos-3-2 dir-up (0)
+move player-01 pos-3-2 pos-4-2 dir-right (0)
+move player-01 pos-4-2 pos-5-2 dir-right (0)
+push-to-goal player-01 stone-02 pos-5-2 pos-5-3 pos-5-4 dir-down (1)
+move player-01 pos-5-3 pos-6-3 dir-right (0)
+move player-01 pos-6-3 pos-7-3 dir-right (0)
+move player-01 pos-7-3 pos-7-4 dir-down (0)
+move player-01 pos-7-4 pos-7-5 dir-down (0)
+push-to-goal player-01 stone-06 pos-7-5 pos-6-5 pos-5-5 dir-left (1)
+move player-01 pos-6-5 pos-6-6 dir-down (0)
+move player-01 pos-6-6 pos-6-7 dir-down (0)
+move player-01 pos-6-7 pos-5-7 dir-left (0)
+move player-01 pos-5-7 pos-4-7 dir-left (0)
+push-to-goal player-01 stone-07 pos-4-7 pos-4-6 pos-4-5 dir-up (1)
+push-to-goal player-01 stone-08 pos-4-6 pos-5-6 pos-6-6 dir-right (1)
+move player-01 pos-5-6 pos-5-7 dir-down (0)
+move player-01 pos-5-7 pos-6-7 dir-right (0)
+move player-01 pos-6-7 pos-7-7 dir-right (0)
+move player-01 pos-7-7 pos-7-6 dir-up (0)
+move player-01 pos-7-6 pos-7-5 dir-up (0)
+move player-01 pos-7-5 pos-6-5 dir-left (0)
+push-to-goal player-01 stone-04 pos-6-5 pos-6-4 pos-6-3 dir-up (1)
+move player-01 pos-6-4 pos-7-4 dir-right (0)
+move player-01 pos-7-4 pos-7-3 dir-up (0)
+move player-01 pos-7-3 pos-7-2 dir-up (0)
+move player-01 pos-7-2 pos-6-2 dir-left (0)
+move player-01 pos-6-2 pos-5-2 dir-left (0)
+move player-01 pos-5-2 pos-5-3 dir-down (0)
+push-to-goal player-01 stone-01 pos-5-3 pos-4-3 pos-3-3 dir-left (1)
+move player-01 pos-4-3 pos-4-2 dir-up (0)
+move player-01 pos-4-2 pos-3-2 dir-left (0)
+move player-01 pos-3-2 pos-2-2 dir-left (0)
+move player-01 pos-2-2 pos-2-3 dir-down (0)
+move player-01 pos-2-3 pos-2-4 dir-down (0)
+move player-01 pos-2-4 pos-3-4 dir-right (0)
+push-to-goal player-01 stone-05 pos-3-4 pos-3-5 pos-3-6 dir-down (1)
+[t=2.99377s, 24496 KB] Plan length: 40 step(s).
+[t=2.99377s, 24496 KB] Plan cost: 8
+[t=2.99377s, 24496 KB] Expanded 77098 state(s).
+[t=2.99377s, 24496 KB] Reopened 0 state(s).
+[t=2.99377s, 24496 KB] Evaluated 103154 state(s).
+[t=2.99377s, 24496 KB] Evaluations: 103154
+[t=2.99377s, 24496 KB] Generated 221315 state(s).
+[t=2.99377s, 24496 KB] Dead ends: 12257 state(s).
+[t=2.99377s, 24496 KB] Expanded until last jump: 56216 state(s).
+[t=2.99377s, 24496 KB] Reopened until last jump: 0 state(s).
+[t=2.99377s, 24496 KB] Evaluated until last jump: 73036 state(s).
+[t=2.99377s, 24496 KB] Generated until last jump: 160448 state(s).
+[t=2.99377s, 24496 KB] Number of registered states: 103154
+[t=2.99377s, 24496 KB] Int hash set load factor: 103154/131072 = 0.787003
+[t=2.99377s, 24496 KB] Int hash set resizes: 17
+[t=2.99377s, 24496 KB] Search time: 2.97743s
+[t=2.99377s, 24496 KB] Total time: 2.99377s
+Solution found.
+Peak memory: 24496 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 3.24s

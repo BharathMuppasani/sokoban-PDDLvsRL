@@ -1,0 +1,113 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/downward5/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-29.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.004s wall-clock]
+Generated 38 rules.
+Computing model... [0.050s CPU, 0.047s wall-clock]
+2993 relevant atoms
+4328 auxiliary atoms
+7321 final queue length
+11453 total queue pushes
+Completing instantiation... [0.060s CPU, 0.066s wall-clock]
+Instantiating: [0.110s CPU, 0.121s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.010s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.010s CPU, 0.010s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+92 uncovered facts
+Choosing groups: [0.000s CPU, 0.002s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.020s CPU, 0.023s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.010s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.002s wall-clock]
+Translating task: [0.060s CPU, 0.067s wall-clock]
+2408 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+77 propositions removed
+Detecting unreachable propositions: [0.030s CPU, 0.030s wall-clock]
+Reordering and filtering variables...
+73 of 73 variables necessary.
+48 of 61 mutex groups necessary.
+1496 of 1496 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.020s CPU, 0.016s wall-clock]
+Translator variables: 73
+Translator derived variables: 0
+Translator facts: 744
+Translator goal facts: 12
+Translator mutex groups: 48
+Translator total mutex groups size: 672
+Translator operators: 1496
+Translator axioms: 0
+Translator task size: 14509
+Translator peak memory: 188328 KB
+Writing output... [0.010s CPU, 0.014s wall-clock]
+Done! [0.270s CPU, 0.277s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/downward5/builds/release/bin/downward --search 'astar(blind(verbosity=normal, transform=no_transform(), cache_estimates=true))' --internal-plan-file /work/bharath/sokoban/sokoban_results/blind/plan-29.txt < output.sas
+[t=0.00235095s, 18652 KB] reading input...
+[t=0.0172875s, 19860 KB] done reading input!
+[t=0.0189271s, 20124 KB] Initializing blind search heuristic...
+[t=0.0190122s, 20124 KB] Building successor generator...done!
+[t=0.0198988s, 20124 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.0199245s, 20124 KB] time for successor generation creation: 0.000797638s
+[t=0.0199564s, 20124 KB] Variables: 73
+[t=0.0199829s, 20124 KB] FactPairs: 744
+[t=0.020007s, 20124 KB] Bytes per state: 20
+[t=0.0200477s, 20124 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.0201161s, 20124 KB] New best heuristic value for blind(verbosity=normal,transform=no_transform(),cache_estimates=true): 0
+[t=0.0201463s, 20124 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0201706s, 20124 KB] f = 0, 1 evaluated, 0 expanded
+[t=0.0201996s, 20124 KB] Initial heuristic value for blind(verbosity=normal,transform=no_transform(),cache_estimates=true): 0
+[t=0.0202238s, 20124 KB] pruning method: none
+[t=0.0202957s, 20124 KB] f = 1, 9 evaluated, 6 expanded
+[t=0.0204621s, 20124 KB] f = 2, 39 evaluated, 29 expanded
+[t=0.0210351s, 20124 KB] f = 3, 184 evaluated, 117 expanded
+[t=0.0267351s, 20260 KB] f = 4, 1731 evaluated, 1002 expanded
+[t=0.0722883s, 20800 KB] f = 5, 13563 evaluated, 8040 expanded
+[t=0.363469s, 24644 KB] f = 6, 86514 evaluated, 53398 expanded
+[t=2.02531s, 49820 KB] f = 7, 471665 evaluated, 302676 expanded
+[t=10.2975s, 144952 KB] f = 8, 2266411 evaluated, 1504357 expanded
+[t=45.7308s, 550288 KB] f = 9, 9845718 evaluated, 6726026 expanded
+[t=188.901s, 2138700 KB] f = 10, 39396652 evaluated, 27591494 expanded
+[t=727.755s, 8060908 KB] f = 11, 147063261 evaluated, 105264650 expanded
+Failed to allocate memory.
+Memory limit has been reached.
+Peak memory: 8388608 KB
+Remove intermediate file output.sas
+search exit code: 22
+
+Driver aborting after search
+INFO     Planner time: 756.01s

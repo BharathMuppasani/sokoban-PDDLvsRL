@@ -1,0 +1,122 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/downward6/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-30.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.003s wall-clock]
+Generated 38 rules.
+Computing model... [0.040s CPU, 0.042s wall-clock]
+2827 relevant atoms
+3634 auxiliary atoms
+6461 final queue length
+11064 total queue pushes
+Completing instantiation... [0.080s CPU, 0.074s wall-clock]
+Instantiating: [0.130s CPU, 0.123s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.006s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.010s CPU, 0.005s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+61 uncovered facts
+Choosing groups: [0.000s CPU, 0.002s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.010s CPU, 0.017s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.005s wall-clock]
+Translating task: [0.080s CPU, 0.080s wall-clock]
+2696 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+21 propositions removed
+Detecting unreachable propositions: [0.040s CPU, 0.032s wall-clock]
+Reordering and filtering variables...
+70 of 70 variables necessary.
+45 of 58 mutex groups necessary.
+1640 of 1640 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.010s CPU, 0.019s wall-clock]
+Translator variables: 70
+Translator derived variables: 0
+Translator facts: 699
+Translator goal facts: 12
+Translator mutex groups: 45
+Translator total mutex groups size: 630
+Translator operators: 1640
+Translator axioms: 0
+Translator task size: 15715
+Translator peak memory: 188840 KB
+Writing output... [0.020s CPU, 0.015s wall-clock]
+Done! [0.310s CPU, 0.298s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/downward6/builds/release/bin/downward --search 'astar(cea(verbosity=normal, transform=no_transform(), cache_estimates=true))' --internal-plan-file /work/bharath/sokoban/sokoban_results/context_enhanced_additive/plan-30.txt < output.sas
+[t=0.00237128s, 18652 KB] reading input...
+[t=0.0183828s, 19872 KB] done reading input!
+[t=0.0200124s, 20136 KB] Initializing context-enhanced additive heuristic...
+[t=0.0323291s, 21324 KB] Building successor generator...done!
+[t=0.0333832s, 21584 KB] peak memory difference for successor generator creation: 260 KB
+[t=0.0334096s, 21584 KB] time for successor generation creation: 0.000942247s
+[t=0.0334418s, 21584 KB] Variables: 70
+[t=0.0334682s, 21584 KB] FactPairs: 699
+[t=0.0334919s, 21584 KB] Bytes per state: 20
+[t=0.0335336s, 21584 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.0366946s, 24488 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 20
+[t=0.0367692s, 24488 KB] g=0, 1 evaluated, 0 expanded
+[t=0.036796s, 24488 KB] f = 20, 1 evaluated, 0 expanded
+[t=0.0368286s, 24620 KB] Initial heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 20
+[t=0.0368634s, 24620 KB] pruning method: none
+[t=0.0403338s, 24744 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 17
+[t=0.0403711s, 24744 KB] g=1, 6 evaluated, 2 expanded
+[t=0.0424076s, 24744 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 16
+[t=0.0424476s, 24744 KB] g=2, 9 evaluated, 3 expanded
+[t=0.0510278s, 25404 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 15
+[t=0.0510657s, 25404 KB] g=3, 22 evaluated, 7 expanded
+[t=0.060825s, 25668 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 13
+[t=0.0608615s, 25668 KB] g=4, 38 evaluated, 15 expanded
+[t=0.0684972s, 25800 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 12
+[t=0.0685348s, 25800 KB] g=5, 51 evaluated, 20 expanded
+[t=0.0790048s, 26460 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 11
+[t=0.0790478s, 26460 KB] g=6, 68 evaluated, 28 expanded
+[t=0.0926511s, 26724 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 9
+[t=0.0926964s, 26724 KB] g=7, 92 evaluated, 41 expanded
+[t=0.0993046s, 26724 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 8
+[t=0.0993398s, 26724 KB] g=8, 104 evaluated, 46 expanded
+[t=0.109436s, 27372 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 7
+[t=0.109474s, 27372 KB] g=9, 122 evaluated, 54 expanded
+[t=0.310354s, 28164 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 6
+[t=0.310399s, 28164 KB] g=9, 503 evaluated, 287 expanded
+[t=0.338047s, 28296 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 5
+[t=0.338086s, 28296 KB] g=10, 556 evaluated, 312 expanded
+[t=23.4234s, 33908 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 4
+[t=23.4236s, 33908 KB] g=11, 43625 evaluated, 26495 expanded, 120 reopened
+[t=28.0707s, 34704 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 3
+[t=28.0709s, 34704 KB] g=11, 52140 evaluated, 31302 expanded, 120 reopened
+Peak memory: 202564 KB
+caught signal 15 -- exiting

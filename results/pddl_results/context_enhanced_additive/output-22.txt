@@ -1,0 +1,446 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/downward6/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-22.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.010s CPU, 0.003s wall-clock]
+Generated 38 rules.
+Computing model... [0.020s CPU, 0.020s wall-clock]
+1204 relevant atoms
+1928 auxiliary atoms
+3132 final queue length
+4002 total queue pushes
+Completing instantiation... [0.010s CPU, 0.015s wall-clock]
+Instantiating: [0.040s CPU, 0.041s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.010s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.005s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+61 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.013s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.001s wall-clock]
+Translating task: [0.020s CPU, 0.016s wall-clock]
+614 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+43 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.007s wall-clock]
+Reordering and filtering variables...
+47 of 47 variables necessary.
+38 of 43 mutex groups necessary.
+378 of 378 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.004s wall-clock]
+Translator variables: 47
+Translator derived variables: 0
+Translator facts: 274
+Translator goal facts: 4
+Translator mutex groups: 38
+Translator total mutex groups size: 228
+Translator operators: 378
+Translator axioms: 0
+Translator task size: 3637
+Translator peak memory: 181416 KB
+Writing output... [0.010s CPU, 0.004s wall-clock]
+Done! [0.090s CPU, 0.089s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/downward6/builds/release/bin/downward --search 'astar(cea(verbosity=normal, transform=no_transform(), cache_estimates=true))' --internal-plan-file /work/bharath/sokoban/sokoban_results/context_enhanced_additive/plan-22.txt < output.sas
+[t=0.0023431s, 18652 KB] reading input...
+[t=0.00625859s, 18924 KB] done reading input!
+[t=0.00790762s, 19184 KB] Initializing context-enhanced additive heuristic...
+[t=0.0104882s, 19316 KB] Building successor generator...done!
+[t=0.0108085s, 19316 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.010834s, 19316 KB] time for successor generation creation: 0.000219223s
+[t=0.0108661s, 19316 KB] Variables: 47
+[t=0.0108915s, 19316 KB] FactPairs: 274
+[t=0.010915s, 19316 KB] Bytes per state: 12
+[t=0.0109726s, 19316 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.0115581s, 19844 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 36
+[t=0.0115938s, 19844 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0116199s, 19844 KB] f = 36, 1 evaluated, 0 expanded
+[t=0.0116491s, 19844 KB] Initial heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 36
+[t=0.0116758s, 19844 KB] pruning method: none
+[t=0.0155961s, 20504 KB] f = 38, 32 evaluated, 28 expanded
+[t=0.0163649s, 20636 KB] f = 41, 39 evaluated, 33 expanded
+[t=0.0200401s, 20636 KB] f = 46, 74 evaluated, 67 expanded
+[t=0.0260051s, 20900 KB] f = 47, 128 evaluated, 105 expanded
+[t=0.0277671s, 20900 KB] f = 49, 143 evaluated, 114 expanded
+[t=0.0283809s, 20900 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 33
+[t=0.0284129s, 20900 KB] g=7, 148 evaluated, 117 expanded
+[t=0.0408559s, 21024 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 31
+[t=0.0408934s, 21024 KB] g=9, 277 evaluated, 221 expanded
+[t=0.041252s, 21024 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 30
+[t=0.0412825s, 21024 KB] g=10, 280 evaluated, 222 expanded
+[t=0.0415354s, 21024 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 29
+[t=0.0415658s, 21024 KB] g=11, 282 evaluated, 223 expanded
+[t=0.0424218s, 21024 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 28
+[t=0.0424542s, 21024 KB] g=12, 290 evaluated, 228 expanded
+[t=0.0458256s, 21024 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 27
+[t=0.0458591s, 21024 KB] g=13, 320 evaluated, 251 expanded
+[t=0.0606707s, 21156 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 26
+[t=0.060709s, 21156 KB] g=13, 455 evaluated, 398 expanded, 34 reopened
+[t=0.0609734s, 21156 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 25
+[t=0.0610033s, 21156 KB] g=14, 457 evaluated, 399 expanded, 34 reopened
+[t=0.0613962s, 21156 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 24
+[t=0.0614258s, 21156 KB] g=15, 460 evaluated, 400 expanded, 34 reopened
+[t=0.0617989s, 21156 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 23
+[t=0.0618292s, 21156 KB] g=16, 463 evaluated, 401 expanded, 34 reopened
+[t=0.101896s, 21288 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 22
+[t=0.101935s, 21288 KB] g=17, 824 evaluated, 708 expanded, 34 reopened
+[t=0.105229s, 21420 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 21
+[t=0.105262s, 21420 KB] g=18, 853 evaluated, 730 expanded, 34 reopened
+[t=0.29454s, 21684 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 19
+[t=0.294581s, 21684 KB] g=20, 2558 evaluated, 2226 expanded, 102 reopened
+[t=0.294972s, 21816 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 18
+[t=0.295007s, 21816 KB] g=21, 2561 evaluated, 2227 expanded, 102 reopened
+[t=0.312894s, 21816 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 16
+[t=0.312932s, 21816 KB] g=23, 2722 evaluated, 2360 expanded, 102 reopened
+[t=0.318862s, 21816 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 15
+[t=0.318898s, 21816 KB] g=25, 2776 evaluated, 2403 expanded, 102 reopened
+[t=0.319155s, 21816 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 14
+[t=0.319184s, 21816 KB] g=26, 2778 evaluated, 2404 expanded, 102 reopened
+[t=0.319563s, 21816 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 13
+[t=0.319594s, 21816 KB] g=27, 2781 evaluated, 2405 expanded, 102 reopened
+[t=0.319965s, 21816 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 12
+[t=0.319994s, 21816 KB] g=28, 2784 evaluated, 2406 expanded, 102 reopened
+[t=0.361394s, 21936 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 11
+[t=0.361432s, 21936 KB] g=30, 3160 evaluated, 2745 expanded, 102 reopened
+[t=0.361677s, 21936 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 10
+[t=0.361704s, 21936 KB] g=31, 3162 evaluated, 2746 expanded, 102 reopened
+[t=0.362046s, 21936 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 8
+[t=0.362073s, 21936 KB] g=32, 3165 evaluated, 2747 expanded, 102 reopened
+[t=1.03692s, 22736 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 7
+[t=1.03697s, 22736 KB] g=35, 9196 evaluated, 7984 expanded, 189 reopened
+[t=1.0373s, 22736 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 6
+[t=1.03733s, 22736 KB] g=36, 9199 evaluated, 7985 expanded, 189 reopened
+[t=8.20106s, 26304 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 5
+[t=8.20125s, 26304 KB] g=40, 71468 evaluated, 63575 expanded, 2957 reopened
+[t=8.21068s, 26304 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 4
+[t=8.21071s, 26304 KB] g=40, 71573 evaluated, 63663 expanded, 2957 reopened
+[t=8.21174s, 26304 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 3
+[t=8.21177s, 26304 KB] g=41, 71588 evaluated, 63674 expanded, 2957 reopened
+[t=8.21294s, 26304 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 1
+[t=8.21298s, 26304 KB] g=43, 71612 evaluated, 63692 expanded, 2957 reopened
+[t=8.21305s, 26304 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 0
+[t=8.21308s, 26304 KB] g=44, 71615 evaluated, 63693 expanded, 2957 reopened
+[t=8.21311s, 26304 KB] Solution found!
+[t=8.21315s, 26304 KB] Actual search time: 8.20147s
+move player-01 pos-04-08 pos-05-08 dir-right (0)
+move player-01 pos-05-08 pos-06-08 dir-right (0)
+move player-01 pos-06-08 pos-07-08 dir-right (0)
+move player-01 pos-07-08 pos-07-07 dir-up (0)
+move player-01 pos-07-07 pos-07-06 dir-up (0)
+move player-01 pos-07-06 pos-07-05 dir-up (0)
+move player-01 pos-07-05 pos-06-05 dir-left (0)
+move player-01 pos-06-05 pos-06-04 dir-up (0)
+move player-01 pos-06-04 pos-06-03 dir-up (0)
+move player-01 pos-06-03 pos-05-03 dir-left (0)
+move player-01 pos-05-03 pos-05-02 dir-up (0)
+move player-01 pos-05-02 pos-04-02 dir-left (0)
+move player-01 pos-04-02 pos-03-02 dir-left (0)
+move player-01 pos-03-02 pos-03-03 dir-down (0)
+push-to-nongoal player-01 stone-01 pos-03-03 pos-04-03 pos-05-03 dir-right (1)
+move player-01 pos-04-03 pos-04-04 dir-down (0)
+push-to-nongoal player-01 stone-04 pos-04-04 pos-04-05 pos-04-06 dir-down (1)
+push-to-nongoal player-01 stone-04 pos-04-05 pos-04-06 pos-04-07 dir-down (1)
+push-to-nongoal player-01 stone-04 pos-04-06 pos-04-07 pos-04-08 dir-down (1)
+move player-01 pos-04-07 pos-04-06 dir-up (0)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+push-to-nongoal player-01 stone-03 pos-04-04 pos-05-04 pos-06-04 dir-right (1)
+move player-01 pos-05-04 pos-04-04 dir-left (0)
+move player-01 pos-04-04 pos-04-03 dir-up (0)
+move player-01 pos-04-03 pos-04-02 dir-up (0)
+move player-01 pos-04-02 pos-05-02 dir-right (0)
+push-to-nongoal player-01 stone-01 pos-05-02 pos-05-03 pos-05-04 dir-down (1)
+move player-01 pos-05-03 pos-06-03 dir-right (0)
+push-to-nongoal player-01 stone-03 pos-06-03 pos-06-04 pos-06-05 dir-down (1)
+move player-01 pos-06-04 pos-07-04 dir-right (0)
+move player-01 pos-07-04 pos-07-05 dir-down (0)
+move player-01 pos-07-05 pos-07-06 dir-down (0)
+move player-01 pos-07-06 pos-07-07 dir-down (0)
+move player-01 pos-07-07 pos-07-08 dir-down (0)
+move player-01 pos-07-08 pos-06-08 dir-left (0)
+move player-01 pos-06-08 pos-05-08 dir-left (0)
+move player-01 pos-05-08 pos-05-09 dir-down (0)
+move player-01 pos-05-09 pos-04-09 dir-left (0)
+move player-01 pos-04-09 pos-03-09 dir-left (0)
+move player-01 pos-03-09 pos-03-08 dir-up (0)
+push-to-nongoal player-01 stone-04 pos-03-08 pos-04-08 pos-05-08 dir-right (1)
+push-to-nongoal player-01 stone-04 pos-04-08 pos-05-08 pos-06-08 dir-right (1)
+push-to-goal player-01 stone-04 pos-05-08 pos-06-08 pos-07-08 dir-right (1)
+move player-01 pos-06-08 pos-05-08 dir-left (0)
+move player-01 pos-05-08 pos-04-08 dir-left (0)
+move player-01 pos-04-08 pos-04-07 dir-up (0)
+move player-01 pos-04-07 pos-04-06 dir-up (0)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+move player-01 pos-04-04 pos-04-03 dir-up (0)
+move player-01 pos-04-03 pos-05-03 dir-right (0)
+move player-01 pos-05-03 pos-06-03 dir-right (0)
+move player-01 pos-06-03 pos-06-04 dir-down (0)
+move player-01 pos-06-04 pos-07-04 dir-right (0)
+move player-01 pos-07-04 pos-07-05 dir-down (0)
+move player-01 pos-07-05 pos-08-05 dir-right (0)
+move player-01 pos-08-05 pos-08-06 dir-down (0)
+move player-01 pos-08-06 pos-08-07 dir-down (0)
+move player-01 pos-08-07 pos-08-08 dir-down (0)
+move player-01 pos-08-08 pos-08-09 dir-down (0)
+move player-01 pos-08-09 pos-07-09 dir-left (0)
+push-to-goal player-01 stone-04 pos-07-09 pos-07-08 pos-07-07 dir-up (1)
+move player-01 pos-07-08 pos-08-08 dir-right (0)
+move player-01 pos-08-08 pos-08-07 dir-up (0)
+move player-01 pos-08-07 pos-08-06 dir-up (0)
+move player-01 pos-08-06 pos-08-05 dir-up (0)
+move player-01 pos-08-05 pos-07-05 dir-left (0)
+move player-01 pos-07-05 pos-07-04 dir-up (0)
+move player-01 pos-07-04 pos-06-04 dir-left (0)
+push-to-nongoal player-01 stone-01 pos-06-04 pos-05-04 pos-04-04 dir-left (1)
+move player-01 pos-05-04 pos-05-03 dir-up (0)
+move player-01 pos-05-03 pos-04-03 dir-left (0)
+push-to-nongoal player-01 stone-01 pos-04-03 pos-04-04 pos-04-05 dir-down (1)
+push-to-nongoal player-01 stone-01 pos-04-04 pos-04-05 pos-04-06 dir-down (1)
+push-to-nongoal player-01 stone-01 pos-04-05 pos-04-06 pos-04-07 dir-down (1)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+move player-01 pos-04-04 pos-05-04 dir-right (0)
+move player-01 pos-05-04 pos-06-04 dir-right (0)
+move player-01 pos-06-04 pos-07-04 dir-right (0)
+move player-01 pos-07-04 pos-07-05 dir-down (0)
+move player-01 pos-07-05 pos-07-06 dir-down (0)
+move player-01 pos-07-06 pos-06-06 dir-left (0)
+push-to-nongoal player-01 stone-03 pos-06-06 pos-06-05 pos-06-04 dir-up (1)
+move player-01 pos-06-05 pos-07-05 dir-right (0)
+move player-01 pos-07-05 pos-07-04 dir-up (0)
+push-to-nongoal player-01 stone-03 pos-07-04 pos-06-04 pos-05-04 dir-left (1)
+move player-01 pos-06-04 pos-06-03 dir-up (0)
+move player-01 pos-06-03 pos-05-03 dir-left (0)
+move player-01 pos-05-03 pos-04-03 dir-left (0)
+move player-01 pos-04-03 pos-04-04 dir-down (0)
+move player-01 pos-04-04 pos-04-05 dir-down (0)
+move player-01 pos-04-05 pos-04-06 dir-down (0)
+push-to-nongoal player-01 stone-01 pos-04-06 pos-04-07 pos-04-08 dir-down (1)
+move player-01 pos-04-07 pos-04-06 dir-up (0)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+move player-01 pos-04-04 pos-04-03 dir-up (0)
+move player-01 pos-04-03 pos-05-03 dir-right (0)
+move player-01 pos-05-03 pos-06-03 dir-right (0)
+move player-01 pos-06-03 pos-06-04 dir-down (0)
+move player-01 pos-06-04 pos-06-05 dir-down (0)
+move player-01 pos-06-05 pos-07-05 dir-right (0)
+move player-01 pos-07-05 pos-08-05 dir-right (0)
+move player-01 pos-08-05 pos-08-06 dir-down (0)
+move player-01 pos-08-06 pos-08-07 dir-down (0)
+move player-01 pos-08-07 pos-08-08 dir-down (0)
+move player-01 pos-08-08 pos-07-08 dir-left (0)
+move player-01 pos-07-08 pos-06-08 dir-left (0)
+move player-01 pos-06-08 pos-05-08 dir-left (0)
+move player-01 pos-05-08 pos-05-09 dir-down (0)
+move player-01 pos-05-09 pos-04-09 dir-left (0)
+move player-01 pos-04-09 pos-03-09 dir-left (0)
+move player-01 pos-03-09 pos-03-08 dir-up (0)
+push-to-nongoal player-01 stone-01 pos-03-08 pos-04-08 pos-05-08 dir-right (1)
+push-to-nongoal player-01 stone-01 pos-04-08 pos-05-08 pos-06-08 dir-right (1)
+move player-01 pos-05-08 pos-04-08 dir-left (0)
+move player-01 pos-04-08 pos-04-07 dir-up (0)
+move player-01 pos-04-07 pos-04-06 dir-up (0)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+move player-01 pos-04-04 pos-04-03 dir-up (0)
+move player-01 pos-04-03 pos-05-03 dir-right (0)
+move player-01 pos-05-03 pos-06-03 dir-right (0)
+move player-01 pos-06-03 pos-06-04 dir-down (0)
+move player-01 pos-06-04 pos-06-05 dir-down (0)
+move player-01 pos-06-05 pos-07-05 dir-right (0)
+move player-01 pos-07-05 pos-08-05 dir-right (0)
+move player-01 pos-08-05 pos-08-06 dir-down (0)
+move player-01 pos-08-06 pos-08-07 dir-down (0)
+move player-01 pos-08-07 pos-08-08 dir-down (0)
+move player-01 pos-08-08 pos-07-08 dir-left (0)
+push-to-goal player-01 stone-04 pos-07-08 pos-07-07 pos-07-06 dir-up (1)
+move player-01 pos-07-07 pos-08-07 dir-right (0)
+move player-01 pos-08-07 pos-08-06 dir-up (0)
+move player-01 pos-08-06 pos-08-05 dir-up (0)
+move player-01 pos-08-05 pos-07-05 dir-left (0)
+move player-01 pos-07-05 pos-06-05 dir-left (0)
+move player-01 pos-06-05 pos-06-04 dir-up (0)
+move player-01 pos-06-04 pos-06-03 dir-up (0)
+move player-01 pos-06-03 pos-05-03 dir-left (0)
+move player-01 pos-05-03 pos-04-03 dir-left (0)
+move player-01 pos-04-03 pos-04-04 dir-down (0)
+move player-01 pos-04-04 pos-04-05 dir-down (0)
+move player-01 pos-04-05 pos-04-06 dir-down (0)
+move player-01 pos-04-06 pos-04-07 dir-down (0)
+move player-01 pos-04-07 pos-04-08 dir-down (0)
+move player-01 pos-04-08 pos-05-08 dir-right (0)
+push-to-goal player-01 stone-01 pos-05-08 pos-06-08 pos-07-08 dir-right (1)
+move player-01 pos-06-08 pos-05-08 dir-left (0)
+move player-01 pos-05-08 pos-04-08 dir-left (0)
+move player-01 pos-04-08 pos-04-07 dir-up (0)
+move player-01 pos-04-07 pos-04-06 dir-up (0)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+move player-01 pos-04-04 pos-04-03 dir-up (0)
+move player-01 pos-04-03 pos-05-03 dir-right (0)
+move player-01 pos-05-03 pos-06-03 dir-right (0)
+move player-01 pos-06-03 pos-06-04 dir-down (0)
+move player-01 pos-06-04 pos-06-05 dir-down (0)
+move player-01 pos-06-05 pos-07-05 dir-right (0)
+move player-01 pos-07-05 pos-08-05 dir-right (0)
+move player-01 pos-08-05 pos-08-06 dir-down (0)
+move player-01 pos-08-06 pos-08-07 dir-down (0)
+move player-01 pos-08-07 pos-07-07 dir-left (0)
+push-to-goal player-01 stone-04 pos-07-07 pos-07-06 pos-07-05 dir-up (1)
+move player-01 pos-07-06 pos-08-06 dir-right (0)
+move player-01 pos-08-06 pos-08-07 dir-down (0)
+move player-01 pos-08-07 pos-08-08 dir-down (0)
+move player-01 pos-08-08 pos-08-09 dir-down (0)
+move player-01 pos-08-09 pos-07-09 dir-left (0)
+push-to-goal player-01 stone-01 pos-07-09 pos-07-08 pos-07-07 dir-up (1)
+move player-01 pos-07-08 pos-06-08 dir-left (0)
+move player-01 pos-06-08 pos-05-08 dir-left (0)
+move player-01 pos-05-08 pos-04-08 dir-left (0)
+move player-01 pos-04-08 pos-04-07 dir-up (0)
+move player-01 pos-04-07 pos-04-06 dir-up (0)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+move player-01 pos-04-04 pos-04-03 dir-up (0)
+move player-01 pos-04-03 pos-03-03 dir-left (0)
+move player-01 pos-03-03 pos-02-03 dir-left (0)
+move player-01 pos-02-03 pos-02-04 dir-down (0)
+push-to-nongoal player-01 stone-02 pos-02-04 pos-03-04 pos-04-04 dir-right (1)
+move player-01 pos-03-04 pos-03-03 dir-up (0)
+move player-01 pos-03-03 pos-04-03 dir-right (0)
+push-to-nongoal player-01 stone-02 pos-04-03 pos-04-04 pos-04-05 dir-down (1)
+push-to-nongoal player-01 stone-02 pos-04-04 pos-04-05 pos-04-06 dir-down (1)
+push-to-nongoal player-01 stone-02 pos-04-05 pos-04-06 pos-04-07 dir-down (1)
+push-to-nongoal player-01 stone-02 pos-04-06 pos-04-07 pos-04-08 dir-down (1)
+move player-01 pos-04-07 pos-04-06 dir-up (0)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+move player-01 pos-04-04 pos-04-03 dir-up (0)
+move player-01 pos-04-03 pos-05-03 dir-right (0)
+move player-01 pos-05-03 pos-06-03 dir-right (0)
+move player-01 pos-06-03 pos-06-04 dir-down (0)
+move player-01 pos-06-04 pos-06-05 dir-down (0)
+move player-01 pos-06-05 pos-06-06 dir-down (0)
+move player-01 pos-06-06 pos-07-06 dir-right (0)
+move player-01 pos-07-06 pos-08-06 dir-right (0)
+move player-01 pos-08-06 pos-08-07 dir-down (0)
+move player-01 pos-08-07 pos-08-08 dir-down (0)
+move player-01 pos-08-08 pos-07-08 dir-left (0)
+push-to-goal player-01 stone-01 pos-07-08 pos-07-07 pos-07-06 dir-up (1)
+move player-01 pos-07-07 pos-07-08 dir-down (0)
+move player-01 pos-07-08 pos-06-08 dir-left (0)
+move player-01 pos-06-08 pos-05-08 dir-left (0)
+move player-01 pos-05-08 pos-05-09 dir-down (0)
+move player-01 pos-05-09 pos-04-09 dir-left (0)
+move player-01 pos-04-09 pos-03-09 dir-left (0)
+move player-01 pos-03-09 pos-03-08 dir-up (0)
+push-to-nongoal player-01 stone-02 pos-03-08 pos-04-08 pos-05-08 dir-right (1)
+push-to-nongoal player-01 stone-02 pos-04-08 pos-05-08 pos-06-08 dir-right (1)
+push-to-goal player-01 stone-02 pos-05-08 pos-06-08 pos-07-08 dir-right (1)
+move player-01 pos-06-08 pos-05-08 dir-left (0)
+move player-01 pos-05-08 pos-04-08 dir-left (0)
+move player-01 pos-04-08 pos-04-07 dir-up (0)
+move player-01 pos-04-07 pos-04-06 dir-up (0)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+move player-01 pos-04-04 pos-04-03 dir-up (0)
+move player-01 pos-04-03 pos-05-03 dir-right (0)
+move player-01 pos-05-03 pos-06-03 dir-right (0)
+move player-01 pos-06-03 pos-06-04 dir-down (0)
+push-to-nongoal player-01 stone-03 pos-06-04 pos-05-04 pos-04-04 dir-left (1)
+move player-01 pos-05-04 pos-05-03 dir-up (0)
+move player-01 pos-05-03 pos-04-03 dir-left (0)
+push-to-nongoal player-01 stone-03 pos-04-03 pos-04-04 pos-04-05 dir-down (1)
+push-to-nongoal player-01 stone-03 pos-04-04 pos-04-05 pos-04-06 dir-down (1)
+push-to-nongoal player-01 stone-03 pos-04-05 pos-04-06 pos-04-07 dir-down (1)
+push-to-nongoal player-01 stone-03 pos-04-06 pos-04-07 pos-04-08 dir-down (1)
+move player-01 pos-04-07 pos-04-06 dir-up (0)
+move player-01 pos-04-06 pos-04-05 dir-up (0)
+move player-01 pos-04-05 pos-04-04 dir-up (0)
+move player-01 pos-04-04 pos-05-04 dir-right (0)
+move player-01 pos-05-04 pos-06-04 dir-right (0)
+move player-01 pos-06-04 pos-06-05 dir-down (0)
+move player-01 pos-06-05 pos-06-06 dir-down (0)
+push-to-nongoal player-01 stone-01 pos-06-06 pos-07-06 pos-08-06 dir-right (1)
+move player-01 pos-07-06 pos-07-07 dir-down (0)
+move player-01 pos-07-07 pos-08-07 dir-right (0)
+move player-01 pos-08-07 pos-08-08 dir-down (0)
+move player-01 pos-08-08 pos-08-09 dir-down (0)
+move player-01 pos-08-09 pos-07-09 dir-left (0)
+push-to-goal player-01 stone-02 pos-07-09 pos-07-08 pos-07-07 dir-up (1)
+move player-01 pos-07-08 pos-08-08 dir-right (0)
+move player-01 pos-08-08 pos-08-07 dir-up (0)
+move player-01 pos-08-07 pos-09-07 dir-right (0)
+move player-01 pos-09-07 pos-09-06 dir-up (0)
+push-to-goal player-01 stone-01 pos-09-06 pos-08-06 pos-07-06 dir-left (1)
+move player-01 pos-08-06 pos-08-07 dir-down (0)
+move player-01 pos-08-07 pos-08-08 dir-down (0)
+move player-01 pos-08-08 pos-07-08 dir-left (0)
+move player-01 pos-07-08 pos-06-08 dir-left (0)
+move player-01 pos-06-08 pos-05-08 dir-left (0)
+move player-01 pos-05-08 pos-05-09 dir-down (0)
+move player-01 pos-05-09 pos-04-09 dir-left (0)
+move player-01 pos-04-09 pos-03-09 dir-left (0)
+move player-01 pos-03-09 pos-03-08 dir-up (0)
+push-to-nongoal player-01 stone-03 pos-03-08 pos-04-08 pos-05-08 dir-right (1)
+push-to-nongoal player-01 stone-03 pos-04-08 pos-05-08 pos-06-08 dir-right (1)
+push-to-goal player-01 stone-03 pos-05-08 pos-06-08 pos-07-08 dir-right (1)
+[t=8.21318s, 26304 KB] Plan length: 264 step(s).
+[t=8.21318s, 26304 KB] Plan cost: 44
+[t=8.21318s, 26304 KB] Expanded 63694 state(s).
+[t=8.21318s, 26304 KB] Reopened 2957 state(s).
+[t=8.21318s, 26304 KB] Evaluated 71615 state(s).
+[t=8.21318s, 26304 KB] Evaluations: 71615
+[t=8.21318s, 26304 KB] Generated 169988 state(s).
+[t=8.21318s, 26304 KB] Dead ends: 6443 state(s).
+[t=8.21318s, 26304 KB] Expanded until last jump: 114 state(s).
+[t=8.21318s, 26304 KB] Reopened until last jump: 0 state(s).
+[t=8.21318s, 26304 KB] Evaluated until last jump: 143 state(s).
+[t=8.21318s, 26304 KB] Generated until last jump: 295 state(s).
+[t=8.21318s, 26304 KB] Number of registered states: 71615
+[t=8.21318s, 26304 KB] Int hash set load factor: 71615/131072 = 0.546379
+[t=8.21318s, 26304 KB] Int hash set resizes: 17
+[t=8.21318s, 26304 KB] Search time: 8.2022s
+[t=8.21318s, 26304 KB] Total time: 8.21318s
+Solution found.
+Peak memory: 26304 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 8.38s

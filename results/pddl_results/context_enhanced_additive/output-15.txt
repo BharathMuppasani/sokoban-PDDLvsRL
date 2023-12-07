@@ -1,0 +1,220 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/downward6/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-15.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.003s wall-clock]
+Generated 38 rules.
+Computing model... [0.030s CPU, 0.021s wall-clock]
+1301 relevant atoms
+2098 auxiliary atoms
+3399 final queue length
+4237 total queue pushes
+Completing instantiation... [0.010s CPU, 0.015s wall-clock]
+Instantiating: [0.040s CPU, 0.042s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.010s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.007s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+72 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.015s wall-clock]
+Building STRIPS to SAS dictionary... [0.010s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.001s wall-clock]
+Translating task: [0.010s CPU, 0.015s wall-clock]
+584 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+53 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.008s wall-clock]
+Reordering and filtering variables...
+53 of 53 variables necessary.
+44 of 49 mutex groups necessary.
+368 of 368 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.004s wall-clock]
+Translator variables: 53
+Translator derived variables: 0
+Translator facts: 278
+Translator goal facts: 4
+Translator mutex groups: 44
+Translator total mutex groups size: 226
+Translator operators: 368
+Translator axioms: 0
+Translator task size: 3525
+Translator peak memory: 181416 KB
+Writing output... [0.010s CPU, 0.004s wall-clock]
+Done! [0.090s CPU, 0.092s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/downward6/builds/release/bin/downward --search 'astar(cea(verbosity=normal, transform=no_transform(), cache_estimates=true))' --internal-plan-file /work/bharath/sokoban/sokoban_results/context_enhanced_additive/plan-15.txt < output.sas
+[t=0.00230328s, 18652 KB] reading input...
+[t=0.00721819s, 18924 KB] done reading input!
+[t=0.00889227s, 19188 KB] Initializing context-enhanced additive heuristic...
+[t=0.0113629s, 19320 KB] Building successor generator...done!
+[t=0.0116644s, 19320 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.0116894s, 19320 KB] time for successor generation creation: 0.000215296s
+[t=0.0117221s, 19320 KB] Variables: 53
+[t=0.011756s, 19320 KB] FactPairs: 278
+[t=0.0117798s, 19320 KB] Bytes per state: 12
+[t=0.0118223s, 19320 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.012435s, 19852 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 69
+[t=0.0124733s, 19852 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0124988s, 19852 KB] f = 69, 1 evaluated, 0 expanded
+[t=0.0125275s, 19852 KB] Initial heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 69
+[t=0.0125548s, 19852 KB] pruning method: none
+[t=0.01403s, 20108 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 68
+[t=0.0140646s, 20108 KB] g=0, 12 evaluated, 8 expanded
+[t=0.0153972s, 20372 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 67
+[t=0.0154355s, 20372 KB] g=1, 23 evaluated, 17 expanded
+[t=0.0155879s, 20372 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 66
+[t=0.0156251s, 20372 KB] g=2, 24 evaluated, 18 expanded
+[t=0.0184054s, 20372 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 63
+[t=0.018439s, 20372 KB] g=3, 52 evaluated, 38 expanded
+[t=0.0219517s, 20628 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 62
+[t=0.021988s, 20628 KB] g=4, 86 evaluated, 67 expanded
+[t=0.0221361s, 20628 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 61
+[t=0.0221651s, 20628 KB] g=5, 87 evaluated, 68 expanded
+[t=0.0225054s, 20628 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 60
+[t=0.0225348s, 20628 KB] g=6, 90 evaluated, 69 expanded
+[t=0.0233536s, 20628 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 59
+[t=0.0233853s, 20628 KB] g=7, 98 evaluated, 73 expanded
+[t=0.0237189s, 20628 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 58
+[t=0.0237489s, 20628 KB] g=8, 101 evaluated, 74 expanded
+[t=0.0238916s, 20628 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 57
+[t=0.0239214s, 20628 KB] g=9, 102 evaluated, 75 expanded
+[t=0.226526s, 21024 KB] f = 70, 2024 evaluated, 1854 expanded
+[t=0.310278s, 21288 KB] f = 71, 2852 evaluated, 2617 expanded
+[t=0.436217s, 21420 KB] f = 72, 4015 evaluated, 3720 expanded
+[t=0.439594s, 21420 KB] f = 73, 4045 evaluated, 3748 expanded
+[t=0.517411s, 21420 KB] f = 74, 4737 evaluated, 4411 expanded
+[t=0.568507s, 21420 KB] f = 75, 5203 evaluated, 4861 expanded
+[t=0.589883s, 21420 KB] f = 76, 5415 evaluated, 5065 expanded
+[t=0.610901s, 21420 KB] f = 77, 5622 evaluated, 5263 expanded
+[t=0.625017s, 21420 KB] f = 78, 5757 evaluated, 5390 expanded
+[t=0.639182s, 21420 KB] f = 79, 5894 evaluated, 5518 expanded
+[t=0.651986s, 21548 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 56
+[t=0.652022s, 21548 KB] g=12, 6019 evaluated, 5623 expanded
+[t=1.90027s, 22332 KB] f = 80, 17819 evaluated, 16944 expanded
+[t=1.93229s, 22332 KB] f = 81, 18122 evaluated, 17244 expanded
+[t=1.99599s, 22332 KB] f = 82, 18769 evaluated, 17873 expanded
+[t=2.02232s, 22332 KB] f = 83, 19015 evaluated, 18120 expanded
+[t=2.05205s, 22336 KB] f = 84, 19323 evaluated, 18420 expanded
+[t=2.07655s, 22336 KB] f = 85, 19563 evaluated, 18667 expanded
+[t=2.09587s, 22336 KB] f = 86, 19766 evaluated, 18870 expanded
+[t=2.10248s, 22336 KB] f = 87, 19830 evaluated, 18936 expanded
+[t=2.11706s, 22336 KB] f = 88, 19982 evaluated, 19091 expanded
+[t=2.12833s, 22336 KB] f = 89, 20078 evaluated, 19188 expanded
+[t=2.13986s, 22336 KB] f = 90, 20202 evaluated, 19315 expanded
+[t=2.15074s, 22336 KB] f = 91, 20294 evaluated, 19407 expanded
+[t=2.15173s, 22336 KB] f = 92, 20302 evaluated, 19417 expanded
+[t=2.16281s, 22336 KB] f = 93, 20396 evaluated, 19511 expanded
+[t=2.16849s, 22336 KB] f = 94, 20448 evaluated, 19561 expanded
+[t=2.1702s, 22336 KB] f = 101, 20464 evaluated, 19581 expanded
+[t=2.18232s, 22336 KB] f = 102, 20559 evaluated, 19726 expanded, 55 reopened
+[t=2.20479s, 22336 KB] f = 103, 20749 evaluated, 20016 expanded, 165 reopened
+[t=2.21675s, 22336 KB] f = 128, 20844 evaluated, 20161 expanded, 220 reopened
+[t=2.21917s, 22336 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 51
+[t=2.21921s, 22336 KB] g=19, 20865 evaluated, 20171 expanded, 220 reopened
+[t=2.22268s, 22336 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 50
+[t=2.22272s, 22336 KB] g=20, 20903 evaluated, 20202 expanded, 220 reopened
+[t=2.22688s, 22336 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 49
+[t=2.22691s, 22336 KB] g=21, 20951 evaluated, 20242 expanded, 220 reopened
+[t=2.22731s, 22336 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 48
+[t=2.22734s, 22336 KB] g=22, 20955 evaluated, 20243 expanded, 220 reopened
+[t=2.22758s, 22336 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 47
+[t=2.22761s, 22336 KB] g=23, 20957 evaluated, 20244 expanded, 220 reopened
+[t=2.22784s, 22336 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 46
+[t=2.22787s, 22336 KB] g=24, 20959 evaluated, 20245 expanded, 220 reopened
+[t=2.22817s, 22472 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 45
+[t=2.22821s, 22472 KB] g=25, 20962 evaluated, 20246 expanded, 220 reopened
+[t=2.22862s, 22472 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 44
+[t=2.22866s, 22472 KB] g=26, 20967 evaluated, 20250 expanded, 220 reopened
+[t=2.25189s, 22472 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 43
+[t=2.25193s, 22472 KB] g=29, 21243 evaluated, 20494 expanded, 220 reopened
+[t=2.25527s, 22604 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 42
+[t=2.25531s, 22604 KB] g=30, 21288 evaluated, 20531 expanded, 220 reopened
+[t=2.25551s, 22604 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 41
+[t=2.25554s, 22604 KB] g=31, 21290 evaluated, 20532 expanded, 220 reopened
+[t=2.90756s, 22868 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 37
+[t=2.9076s, 22868 KB] g=35, 28574 evaluated, 27229 expanded, 220 reopened
+[t=2.91108s, 22868 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 36
+[t=2.91111s, 22868 KB] g=36, 28618 evaluated, 27267 expanded, 220 reopened
+[t=2.91133s, 22868 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 33
+[t=2.91136s, 22868 KB] g=37, 28620 evaluated, 27268 expanded, 220 reopened
+[t=2.91246s, 22868 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 32
+[t=2.91249s, 22868 KB] g=38, 28633 evaluated, 27275 expanded, 220 reopened
+[t=6.78341s, 25480 KB] f = 132, 68791 evaluated, 100358 expanded, 35510 reopened
+[t=6.78598s, 25480 KB] f = 133, 68809 evaluated, 100375 expanded, 35510 reopened
+[t=6.79894s, 25480 KB] f = 136, 68868 evaluated, 102274 expanded, 37343 reopened
+[t=6.8013s, 25480 KB] f = 137, 68886 evaluated, 102291 expanded, 37343 reopened
+[t=6.80349s, 25480 KB] f = 141, 68903 evaluated, 102309 expanded, 37343 reopened
+[t=6.80566s, 25480 KB] f = 145, 68920 evaluated, 102327 expanded, 37343 reopened
+[t=6.80785s, 25480 KB] f = 151, 68937 evaluated, 102345 expanded, 37343 reopened
+[t=8.54768s, 25912 KB] f = 152, 85229 evaluated, 136661 expanded, 55848 reopened
+[t=8.63398s, 25912 KB] f = 153, 85753 evaluated, 143551 expanded, 62238 reopened
+[t=8.67495s, 25912 KB] f = 154, 86146 evaluated, 143926 expanded, 62238 reopened
+[t=8.6878s, 25912 KB] f = 155, 86277 evaluated, 144051 expanded, 62238 reopened
+[t=8.70063s, 25912 KB] f = 156, 86408 evaluated, 144176 expanded, 62238 reopened
+[t=8.72693s, 25912 KB] f = 157, 86589 evaluated, 146334 expanded, 64211 reopened
+[t=8.74534s, 25912 KB] f = 158, 86740 evaluated, 147366 expanded, 65094 reopened
+[t=8.74939s, 25912 KB] f = 159, 86755 evaluated, 148083 expanded, 65793 reopened
+[t=8.75018s, 25912 KB] f = 160, 86760 evaluated, 148152 expanded, 65856 reopened
+[t=8.75096s, 25912 KB] f = 161, 86765 evaluated, 148221 expanded, 65919 reopened
+[t=8.76429s, 25912 KB] f = 162, 86901 evaluated, 148415 expanded, 65982 reopened
+[t=8.76507s, 25912 KB] f = 163, 86906 evaluated, 148484 expanded, 66045 reopened
+[t=8.77784s, 25912 KB] f = 166, 87037 evaluated, 148609 expanded, 66045 reopened
+[t=8.7786s, 25912 KB] f = 168, 87042 evaluated, 148678 expanded, 66108 reopened
+[t=8.77936s, 25912 KB] Completely explored state space -- no solution!
+[t=8.77939s, 25912 KB] Actual search time: 8.76684s
+[t=8.77942s, 25912 KB] Expanded 148747 state(s).
+[t=8.77942s, 25912 KB] Reopened 66171 state(s).
+[t=8.77942s, 25912 KB] Evaluated 87047 state(s).
+[t=8.77942s, 25912 KB] Evaluations: 87047
+[t=8.77942s, 25912 KB] Generated 394000 state(s).
+[t=8.77942s, 25912 KB] Dead ends: 4471 state(s).
+[t=8.77942s, 25912 KB] Expanded until last jump: 148678 state(s).
+[t=8.77942s, 25912 KB] Reopened until last jump: 66108 state(s).
+[t=8.77942s, 25912 KB] Evaluated until last jump: 87042 state(s).
+[t=8.77942s, 25912 KB] Generated until last jump: 393832 state(s).
+[t=8.77942s, 25912 KB] Number of registered states: 87047
+[t=8.77942s, 25912 KB] Int hash set load factor: 87047/131072 = 0.664116
+[t=8.77942s, 25912 KB] Int hash set resizes: 17
+[t=8.77942s, 25912 KB] Search time: 8.7676s
+[t=8.77942s, 25912 KB] Total time: 8.77942s
+Search stopped without finding a solution.
+Peak memory: 25912 KB
+Remove intermediate file output.sas
+search exit code: 12
+
+Driver aborting after search
+INFO     Planner time: 8.95s

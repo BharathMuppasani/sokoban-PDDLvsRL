@@ -1,0 +1,156 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/downward1/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-26.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 38 rules.
+Computing model... [0.020s CPU, 0.020s wall-clock]
+1190 relevant atoms
+1854 auxiliary atoms
+3044 final queue length
+4032 total queue pushes
+Completing instantiation... [0.020s CPU, 0.017s wall-clock]
+Instantiating: [0.050s CPU, 0.043s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.010s CPU, 0.004s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+55 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.012s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.001s wall-clock]
+Translating task: [0.020s CPU, 0.019s wall-clock]
+691 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+38 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.009s wall-clock]
+Reordering and filtering variables...
+45 of 45 variables necessary.
+34 of 40 mutex groups necessary.
+416 of 416 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.005s wall-clock]
+Translator variables: 45
+Translator derived variables: 0
+Translator facts: 282
+Translator goal facts: 5
+Translator mutex groups: 34
+Translator total mutex groups size: 238
+Translator operators: 416
+Translator axioms: 0
+Translator task size: 4026
+Translator peak memory: 181416 KB
+Writing output... [0.000s CPU, 0.005s wall-clock]
+Done! [0.090s CPU, 0.096s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/downward1/builds/release/bin/downward --search 'astar(landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true, verbosity=normal, use_orders=true, only_causal_landmarks=false), pref=false, verbosity=normal, transform=no_transform(), cache_estimates=true, optimal=false, alm=true, lpsolver=cplex))' --internal-plan-file /work/bharath/sokoban/sokoban_results/lm_cost/plan-26.txt < output.sas
+[t=0.00240976s, 18652 KB] reading input...
+[t=0.00673344s, 18924 KB] done reading input!
+[t=0.00922809s, 19188 KB] Initializing landmark cost partitioning heuristic...
+[t=0.00929422s, 19188 KB] Generating landmark graph...
+[t=0.00939772s, 19188 KB] Initializing Exploration...
+[t=0.00977689s, 19336 KB] Generating landmarks using the RPG/SAS+ approach
+[t=0.0130017s, 19336 KB] Removed 0 reasonable or obedient reasonable orders
+[t=0.0130754s, 19336 KB] Landmarks generation time: 0.003782s
+[t=0.0131082s, 19336 KB] Discovered 32 landmarks, of which 1 are disjunctive and 0 are conjunctive.
+[t=0.0131336s, 19336 KB] 81 edges
+[t=0.0131577s, 19336 KB] Landmark graph generation time: 0.00388572s
+[t=0.0131827s, 19336 KB] Landmark graph contains 32 landmarks, of which 1 are disjunctive and 0 are conjunctive.
+[t=0.0132069s, 19336 KB] Landmark graph contains 81 orderings.
+[t=0.0132896s, 19336 KB] Building successor generator...done!
+[t=0.0136136s, 19336 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.0136386s, 19336 KB] time for successor generation creation: 0.000233481s
+[t=0.0136722s, 19336 KB] Variables: 45
+[t=0.0136984s, 19336 KB] FactPairs: 282
+[t=0.0137223s, 19336 KB] Bytes per state: 12
+[t=0.0137713s, 19336 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.0138184s, 19336 KB] 14 initial landmarks, 5 goal landmarks
+[t=0.0138569s, 19336 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 12
+[t=0.0138826s, 19336 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0139077s, 19336 KB] f = 12, 1 evaluated, 0 expanded
+[t=0.0139384s, 19336 KB] Initial heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 12
+[t=0.0139634s, 19336 KB] pruning method: none
+[t=0.0141047s, 19336 KB] f = 13, 17 evaluated, 15 expanded
+[t=0.0142642s, 19336 KB] f = 14, 39 evaluated, 34 expanded
+[t=0.0149148s, 19336 KB] f = 15, 148 evaluated, 123 expanded
+[t=0.0173634s, 19336 KB] f = 16, 576 evaluated, 471 expanded
+[t=0.0253758s, 19336 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 11
+[t=0.0254098s, 19336 KB] g=3, 1963 evaluated, 1643 expanded
+[t=0.0254577s, 19336 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 10
+[t=0.025484s, 19336 KB] g=4, 1967 evaluated, 1644 expanded
+[t=0.0519644s, 19556 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 9
+[t=0.0520013s, 19556 KB] g=6, 6510 evaluated, 5208 expanded, 23 reopened
+[t=0.0526575s, 19556 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 8
+[t=0.0526866s, 19556 KB] g=8, 6632 evaluated, 5284 expanded, 23 reopened
+[t=0.0594425s, 19556 KB] f = 17, 7789 evaluated, 6228 expanded, 49 reopened
+[t=0.0608607s, 19688 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 7
+[t=0.0608923s, 19688 KB] g=10, 7974 evaluated, 6329 expanded, 49 reopened
+[t=0.212031s, 20888 KB] f = 18, 33139 evaluated, 26896 expanded, 146 reopened
+[t=0.213716s, 20888 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 6
+[t=0.213752s, 20888 KB] g=11, 33414 evaluated, 27065 expanded, 146 reopened
+[t=0.706867s, 24252 KB] f = 19, 114977 evaluated, 95785 expanded, 617 reopened
+[t=0.738757s, 26304 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 5
+[t=0.738953s, 26304 KB] g=14, 119441 evaluated, 99170 expanded, 617 reopened
+[t=2.04899s, 34996 KB] f = 20, 328172 evaluated, 279635 expanded, 1686 reopened
+[t=5.263s, 57092 KB] f = 21, 828370 evaluated, 718747 expanded, 4346 reopened
+[t=10.8163s, 95276 KB] f = 22, 1667470 evaluated, 1461266 expanded, 7357 reopened
+[t=23.4548s, 241116 KB] f = 23, 3487187 evaluated, 3099526 expanded, 15632 reopened
+[t=26.0026s, 241116 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 4
+[t=26.0028s, 241116 KB] g=19, 3854296 evaluated, 3441274 expanded, 19580 reopened
+[t=46.2993s, 329540 KB] f = 24, 6845187 evaluated, 6162095 expanded, 30125 reopened
+[t=85.4896s, 594864 KB] f = 25, 12445763 evaluated, 11333600 expanded, 54144 reopened
+[t=91.6106s, 626236 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 3
+[t=91.6109s, 626236 KB] g=21, 13334185 evaluated, 12191571 expanded, 68800 reopened
+[t=105.992s, 903864 KB] f = 26, 15420642 evaluated, 14015169 expanded, 68971 reopened
+[t=115.051s, 903864 KB] f = 27, 16693230 evaluated, 15257986 expanded, 74305 reopened
+[t=192.3s, 1737636 KB] f = 28, 27549649 evaluated, 25448926 expanded, 123602 reopened
+[t=303.087s, 2073572 KB] f = 29, 42959873 evaluated, 40063102 expanded, 201212 reopened
+[t=457.855s, 3430116 KB] f = 30, 63564988 evaluated, 59774870 expanded, 314745 reopened
+[t=555.066s, 3786724 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 2
+[t=555.066s, 3786724 KB] g=27, 76454750 evaluated, 72536671 expanded, 452320 reopened
+[t=653.018s, 4266264 KB] f = 31, 89956379 evaluated, 85249297 expanded, 477615 reopened
+[t=766.897s, 4810508 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 1
+[t=766.897s, 4810508 KB] g=29, 105346470 evaluated, 100675937 expanded, 662262 reopened
+[t=829.498s, 6929952 KB] f = 32, 113606753 evaluated, 107722920 expanded, 668984 reopened
+[t=1108.97s, 7456476 KB] f = 33, 150462494 evaluated, 143840766 expanded, 959129 reopened
+Failed to allocate memory.
+Memory limit has been reached.
+Peak memory: 8388608 KB
+Remove intermediate file output.sas
+search exit code: 22
+
+Driver aborting after search
+INFO     Planner time: 1314.61s

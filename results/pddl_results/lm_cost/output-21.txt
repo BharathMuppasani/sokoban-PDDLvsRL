@@ -1,0 +1,184 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/downward1/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-21.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 38 rules.
+Computing model... [0.030s CPU, 0.032s wall-clock]
+2092 relevant atoms
+2736 auxiliary atoms
+4828 final queue length
+8133 total queue pushes
+Completing instantiation... [0.050s CPU, 0.049s wall-clock]
+Instantiating: [0.080s CPU, 0.086s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.010s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.003s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+47 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.020s CPU, 0.013s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.002s wall-clock]
+Translating task: [0.050s CPU, 0.056s wall-clock]
+1902 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+12 propositions removed
+Detecting unreachable propositions: [0.030s CPU, 0.024s wall-clock]
+Reordering and filtering variables...
+59 of 59 variables necessary.
+36 of 48 mutex groups necessary.
+1176 of 1176 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.010s CPU, 0.012s wall-clock]
+Translator variables: 59
+Translator derived variables: 0
+Translator facts: 526
+Translator goal facts: 11
+Translator mutex groups: 36
+Translator total mutex groups size: 468
+Translator operators: 1176
+Translator axioms: 0
+Translator task size: 11288
+Translator peak memory: 186024 KB
+Writing output... [0.010s CPU, 0.011s wall-clock]
+Done! [0.200s CPU, 0.208s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/downward1/builds/release/bin/downward --search 'astar(landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true, verbosity=normal, use_orders=true, only_causal_landmarks=false), pref=false, verbosity=normal, transform=no_transform(), cache_estimates=true, optimal=false, alm=true, lpsolver=cplex))' --internal-plan-file /work/bharath/sokoban/sokoban_results/lm_cost/plan-21.txt < output.sas
+[t=0.00236022s, 18652 KB] reading input...
+[t=0.0135386s, 19552 KB] done reading input!
+[t=0.0157825s, 19816 KB] Initializing landmark cost partitioning heuristic...
+[t=0.0158434s, 19816 KB] Generating landmark graph...
+[t=0.016034s, 19816 KB] Initializing Exploration...
+[t=0.0170041s, 19952 KB] Generating landmarks using the RPG/SAS+ approach
+[t=0.0200478s, 20084 KB] Removed 0 reasonable or obedient reasonable orders
+[t=0.020164s, 20084 KB] Landmarks generation time: 0.00433646s
+[t=0.0202248s, 20084 KB] Discovered 15 landmarks, of which 2 are disjunctive and 0 are conjunctive.
+[t=0.0202499s, 20084 KB] 4 edges
+[t=0.020274s, 20084 KB] Landmark graph generation time: 0.00445241s
+[t=0.0202986s, 20084 KB] Landmark graph contains 15 landmarks, of which 2 are disjunctive and 0 are conjunctive.
+[t=0.0203224s, 20084 KB] Landmark graph contains 4 orderings.
+[t=0.0204688s, 20084 KB] Building successor generator...done!
+[t=0.0211899s, 20084 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.0212151s, 20084 KB] time for successor generation creation: 0.000635677s
+[t=0.0212461s, 20084 KB] Variables: 59
+[t=0.0212756s, 20084 KB] FactPairs: 526
+[t=0.0212994s, 20084 KB] Bytes per state: 16
+[t=0.0213473s, 20084 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.021385s, 20084 KB] 12 initial landmarks, 11 goal landmarks
+[t=0.0214209s, 20084 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 1
+[t=0.0214465s, 20084 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0214707s, 20084 KB] f = 1, 1 evaluated, 0 expanded
+[t=0.0214994s, 20084 KB] Initial heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 1
+[t=0.0215237s, 20084 KB] pruning method: none
+[t=0.0217353s, 20084 KB] f = 3, 29 evaluated, 21 expanded
+[t=0.023521s, 20084 KB] f = 4, 323 evaluated, 241 expanded
+[t=0.0310774s, 20084 KB] f = 5, 1479 evaluated, 1087 expanded
+[t=0.061769s, 20220 KB] f = 6, 5988 evaluated, 4379 expanded
+[t=0.175567s, 21088 KB] f = 7, 22838 evaluated, 16663 expanded
+[t=0.52051s, 23740 KB] f = 8, 72101 evaluated, 51852 expanded
+[t=1.93223s, 34972 KB] f = 9, 264987 evaluated, 189436 expanded
+[t=7.34657s, 79940 KB] f = 10, 958634 evaluated, 689828 expanded
+[t=8.10063s, 80028 KB] New best heuristic value for landmark_cost_partitioning(lm_rhw(disjunctive_landmarks=true,verbosity=normal,use_orders=true,only_causal_landmarks=false),pref=false,verbosity=normal,transform=no_transform(),cache_estimates=true,optimal=false,alm=true,lpsolver=cplex): 0
+[t=8.10082s, 80028 KB] g=10, 1080751 evaluated, 752790 expanded
+[t=8.10085s, 80028 KB] Solution found!
+[t=8.10089s, 80028 KB] Actual search time: 8.07937s
+move player-01 pos-7-7 pos-6-7 dir-left (0)
+move player-01 pos-6-7 pos-5-7 dir-left (0)
+move player-01 pos-5-7 pos-4-7 dir-left (0)
+push-to-nongoal player-01 stone-10 pos-4-7 pos-4-6 pos-4-5 dir-up (1)
+push-to-goal player-01 stone-11 pos-4-6 pos-5-6 pos-6-6 dir-right (1)
+move player-01 pos-5-6 pos-5-5 dir-up (0)
+move player-01 pos-5-5 pos-5-4 dir-up (0)
+move player-01 pos-5-4 pos-4-4 dir-left (0)
+push-to-goal player-01 stone-10 pos-4-4 pos-4-5 pos-4-6 dir-down (1)
+move player-01 pos-4-5 pos-5-5 dir-right (0)
+move player-01 pos-5-5 pos-5-6 dir-down (0)
+move player-01 pos-5-6 pos-5-7 dir-down (0)
+move player-01 pos-5-7 pos-6-7 dir-right (0)
+move player-01 pos-6-7 pos-7-7 dir-right (0)
+move player-01 pos-7-7 pos-7-6 dir-up (0)
+move player-01 pos-7-6 pos-7-5 dir-up (0)
+move player-01 pos-7-5 pos-7-4 dir-up (0)
+move player-01 pos-7-4 pos-7-3 dir-up (0)
+move player-01 pos-7-3 pos-7-2 dir-up (0)
+move player-01 pos-7-2 pos-6-2 dir-left (0)
+move player-01 pos-6-2 pos-5-2 dir-left (0)
+push-to-nongoal player-01 stone-03 pos-5-2 pos-5-3 pos-5-4 dir-down (1)
+push-to-nongoal player-01 stone-03 pos-5-3 pos-5-4 pos-5-5 dir-down (1)
+push-to-goal player-01 stone-03 pos-5-4 pos-5-5 pos-5-6 dir-down (1)
+move player-01 pos-5-5 pos-5-4 dir-up (0)
+move player-01 pos-5-4 pos-5-3 dir-up (0)
+move player-01 pos-5-3 pos-5-2 dir-up (0)
+move player-01 pos-5-2 pos-4-2 dir-left (0)
+move player-01 pos-4-2 pos-3-2 dir-left (0)
+move player-01 pos-3-2 pos-2-2 dir-left (0)
+move player-01 pos-2-2 pos-2-3 dir-down (0)
+move player-01 pos-2-3 pos-2-4 dir-down (0)
+push-to-nongoal player-01 stone-05 pos-2-4 pos-3-4 pos-4-4 dir-right (1)
+push-to-nongoal player-01 stone-05 pos-3-4 pos-4-4 pos-5-4 dir-right (1)
+move player-01 pos-4-4 pos-4-5 dir-down (0)
+move player-01 pos-4-5 pos-5-5 dir-right (0)
+push-to-goal player-01 stone-05 pos-5-5 pos-5-4 pos-5-3 dir-up (1)
+move player-01 pos-5-4 pos-4-4 dir-left (0)
+move player-01 pos-4-4 pos-3-4 dir-left (0)
+move player-01 pos-3-4 pos-2-4 dir-left (0)
+move player-01 pos-2-4 pos-2-3 dir-up (0)
+move player-01 pos-2-3 pos-2-2 dir-up (0)
+move player-01 pos-2-2 pos-3-2 dir-right (0)
+push-to-goal player-01 stone-01 pos-3-2 pos-3-3 pos-3-4 dir-down (1)
+[t=8.10092s, 80028 KB] Plan length: 44 step(s).
+[t=8.10092s, 80028 KB] Plan cost: 10
+[t=8.10092s, 80028 KB] Expanded 752791 state(s).
+[t=8.10092s, 80028 KB] Reopened 0 state(s).
+[t=8.10092s, 80028 KB] Evaluated 1080751 state(s).
+[t=8.10092s, 80028 KB] Evaluations: 1189533
+[t=8.10092s, 80028 KB] Generated 2018752 state(s).
+[t=8.10092s, 80028 KB] Dead ends: 0 state(s).
+[t=8.10092s, 80028 KB] Expanded until last jump: 689828 state(s).
+[t=8.10092s, 80028 KB] Reopened until last jump: 0 state(s).
+[t=8.10092s, 80028 KB] Evaluated until last jump: 958634 state(s).
+[t=8.10092s, 80028 KB] Generated until last jump: 1831746 state(s).
+[t=8.10092s, 80028 KB] Number of registered states: 1080751
+[t=8.10092s, 80028 KB] Int hash set load factor: 1080751/2097152 = 0.515342
+[t=8.10092s, 80028 KB] Int hash set resizes: 21
+[t=8.10092s, 80028 KB] Search time: 8.07957s
+[t=8.10092s, 80028 KB] Total time: 8.10092s
+Solution found.
+Peak memory: 80028 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 8.40s

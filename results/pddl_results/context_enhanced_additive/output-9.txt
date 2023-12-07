@@ -1,0 +1,148 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/downward6/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-9.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 38 rules.
+Computing model... [0.020s CPU, 0.016s wall-clock]
+970 relevant atoms
+1538 auxiliary atoms
+2508 final queue length
+3109 total queue pushes
+Completing instantiation... [0.010s CPU, 0.010s wall-clock]
+Instantiating: [0.030s CPU, 0.032s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.010s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.004s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+52 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.011s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.012s wall-clock]
+426 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+35 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.005s wall-clock]
+Reordering and filtering variables...
+42 of 42 variables necessary.
+33 of 38 mutex groups necessary.
+270 of 270 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.003s wall-clock]
+Translator variables: 42
+Translator derived variables: 0
+Translator facts: 223
+Translator goal facts: 4
+Translator mutex groups: 33
+Translator total mutex groups size: 182
+Translator operators: 270
+Translator axioms: 0
+Translator task size: 2623
+Translator peak memory: 180648 KB
+Writing output... [0.000s CPU, 0.003s wall-clock]
+Done! [0.060s CPU, 0.070s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/downward6/builds/release/bin/downward --search 'astar(cea(verbosity=normal, transform=no_transform(), cache_estimates=true))' --internal-plan-file /work/bharath/sokoban/sokoban_results/context_enhanced_additive/plan-9.txt < output.sas
+[t=0.00236659s, 18652 KB] reading input...
+[t=0.00528635s, 18812 KB] done reading input!
+[t=0.00689695s, 19076 KB] Initializing context-enhanced additive heuristic...
+[t=0.00876275s, 19208 KB] Building successor generator...done!
+[t=0.00903031s, 19208 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.00905599s, 19208 KB] time for successor generation creation: 0.000163986s
+[t=0.00908874s, 19208 KB] Variables: 42
+[t=0.00911495s, 19208 KB] FactPairs: 223
+[t=0.00913893s, 19208 KB] Bytes per state: 8
+[t=0.00918156s, 19208 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.00952257s, 19332 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 7
+[t=0.0095568s, 19332 KB] g=0, 1 evaluated, 0 expanded
+[t=0.00958252s, 19332 KB] f = 7, 1 evaluated, 0 expanded
+[t=0.00961398s, 19464 KB] Initial heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 7
+[t=0.009649s, 19464 KB] pruning method: none
+[t=0.0111227s, 19852 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 6
+[t=0.0111643s, 19852 KB] g=1, 23 evaluated, 20 expanded
+[t=0.0124926s, 19984 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 4
+[t=0.0125321s, 19984 KB] g=1, 55 evaluated, 50 expanded
+[t=0.0127053s, 19984 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 3
+[t=0.0127346s, 19984 KB] g=2, 58 evaluated, 51 expanded
+[t=0.0162525s, 20248 KB] f = 9, 139 evaluated, 111 expanded
+[t=0.0194874s, 20248 KB] f = 10, 219 evaluated, 172 expanded
+[t=0.0199127s, 20248 KB] f = 11, 226 evaluated, 177 expanded
+[t=0.0241361s, 20248 KB] f = 12, 319 evaluated, 254 expanded
+[t=0.0279236s, 20380 KB] f = 13, 387 evaluated, 306 expanded
+[t=0.034788s, 20380 KB] f = 14, 550 evaluated, 444 expanded
+[t=0.042946s, 20380 KB] f = 15, 719 evaluated, 576 expanded
+[t=0.0447954s, 20380 KB] f = 16, 757 evaluated, 607 expanded
+[t=0.0556103s, 20380 KB] f = 17, 956 evaluated, 785 expanded
+[t=0.0581419s, 20380 KB] f = 18, 1010 evaluated, 837 expanded
+[t=0.0905499s, 20508 KB] f = 19, 1678 evaluated, 1562 expanded, 140 reopened
+[t=0.0947984s, 20508 KB] f = 20, 1764 evaluated, 1638 expanded, 140 reopened
+[t=0.099443s, 20508 KB] f = 21, 1855 evaluated, 1721 expanded, 140 reopened
+[t=0.100481s, 20508 KB] f = 22, 1875 evaluated, 1739 expanded, 140 reopened
+[t=0.102578s, 20508 KB] f = 23, 1917 evaluated, 1781 expanded, 140 reopened
+[t=0.103763s, 20508 KB] f = 24, 1938 evaluated, 1799 expanded, 140 reopened
+[t=0.106273s, 20508 KB] f = 25, 1975 evaluated, 1834 expanded, 140 reopened
+[t=0.12343s, 20640 KB] f = 26, 2308 evaluated, 2207 expanded, 211 reopened
+[t=0.128128s, 20640 KB] f = 28, 2386 evaluated, 2285 expanded, 211 reopened
+[t=0.130552s, 20640 KB] f = 29, 2436 evaluated, 2330 expanded, 211 reopened
+[t=0.131663s, 20640 KB] f = 30, 2455 evaluated, 2350 expanded, 211 reopened
+[t=0.134129s, 20640 KB] f = 31, 2495 evaluated, 2386 expanded, 211 reopened
+[t=0.135391s, 20640 KB] f = 33, 2515 evaluated, 2404 expanded, 211 reopened
+[t=0.136673s, 20640 KB] f = 38, 2535 evaluated, 2422 expanded, 211 reopened
+[t=0.141844s, 20640 KB] Completely explored state space -- no solution!
+[t=0.141879s, 20640 KB] Actual search time: 0.132229s
+[t=0.141908s, 20640 KB] Expanded 2514 state(s).
+[t=0.141908s, 20640 KB] Reopened 211 state(s).
+[t=0.141908s, 20640 KB] Evaluated 2635 state(s).
+[t=0.141908s, 20640 KB] Evaluations: 2635
+[t=0.141908s, 20640 KB] Generated 6337 state(s).
+[t=0.141908s, 20640 KB] Dead ends: 332 state(s).
+[t=0.141908s, 20640 KB] Expanded until last jump: 2422 state(s).
+[t=0.141908s, 20640 KB] Reopened until last jump: 211 state(s).
+[t=0.141908s, 20640 KB] Evaluated until last jump: 2535 state(s).
+[t=0.141908s, 20640 KB] Generated until last jump: 6117 state(s).
+[t=0.141908s, 20640 KB] Number of registered states: 2635
+[t=0.141908s, 20640 KB] Int hash set load factor: 2635/4096 = 0.643311
+[t=0.141908s, 20640 KB] Int hash set resizes: 12
+[t=0.141908s, 20640 KB] Search time: 0.132728s
+[t=0.141908s, 20640 KB] Total time: 0.141908s
+Search stopped without finding a solution.
+Peak memory: 20640 KB
+Remove intermediate file output.sas
+search exit code: 12
+
+Driver aborting after search
+INFO     Planner time: 0.29s

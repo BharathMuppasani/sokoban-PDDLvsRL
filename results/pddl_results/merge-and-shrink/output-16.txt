@@ -1,0 +1,618 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/scorpion2/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-16.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.003s wall-clock]
+Generated 38 rules.
+Computing model... [0.030s CPU, 0.020s wall-clock]
+1186 relevant atoms
+2060 auxiliary atoms
+3246 final queue length
+3818 total queue pushes
+Completing instantiation... [0.010s CPU, 0.011s wall-clock]
+Instantiating: [0.050s CPU, 0.037s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.010s CPU, 0.008s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+76 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.015s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.011s wall-clock]
+422 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+66 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.006s wall-clock]
+Reordering and filtering variables...
+49 of 49 variables necessary.
+42 of 46 mutex groups necessary.
+272 of 272 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.003s wall-clock]
+Translator variables: 49
+Translator derived variables: 0
+Translator facts: 233
+Translator goal facts: 3
+Translator mutex groups: 42
+Translator total mutex groups size: 185
+Translator operators: 272
+Translator axioms: 0
+Translator task size: 2588
+Translator peak memory: 180648 KB
+Writing output... [0.000s CPU, 0.003s wall-clock]
+Done! [0.080s CPU, 0.079s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/scorpion2/builds/release/bin/downward --search 'astar(merge_and_shrink(shrink_strategy=shrink_bisimulation(greedy=false),merge_strategy=merge_sccs(order_of_sccs=topological, merge_selector=score_based_filtering(scoring_functions=[goal_relevance,dfp,total_order])),label_reduction=exact(before_shrinking=true,before_merging=false),max_states=50000,threshold_before_merge=1))' --internal-plan-file /work/bharath/sokoban/sokoban_results/merge-and-shrink/plan-16.txt < output.sas
+[t=4.8935e-05s, 18452 KB] reading input...
+[t=0.00288916s, 18600 KB] done reading input!
+Warning: plugin diverse_potentials already has argument verbosity
+Warning: plugin ipdb already has argument verbosity
+[t=0.00525892s, 19132 KB] Initializing merge-and-shrink heuristic...
+[t=0.00533834s, 19132 KB] Running merge-and-shrink algorithm...
+[t=0.00539095s, 19132 KB] Merge strategy options:
+[t=0.00541932s, 19132 KB] Type: sccs
+[t=0.00544387s, 19132 KB] Merge order of sccs: topological
+[t=0.00546808s, 19132 KB] Merge strategy for merging within sccs: 
+[t=0.00549219s, 19132 KB] Merge selector options:
+[t=0.00551605s, 19132 KB] Name: score based filtering
+[t=0.00554038s, 19132 KB] Merge scoring function:
+[t=0.0055642s, 19132 KB] Name: goal relevance
+[t=0.00558829s, 19132 KB] Merge scoring function:
+[t=0.00561184s, 19132 KB] Name: dfp
+[t=0.00563554s, 19132 KB] Merge scoring function:
+[t=0.00565901s, 19132 KB] Name: total order
+[t=0.00568343s, 19132 KB] Atomic transition system order: reverse level
+[t=0.00570718s, 19132 KB] Product transition system order: new to old
+[t=0.00573143s, 19132 KB] Consider product before atomic transition systems
+[t=0.00575525s, 19132 KB] Random seed: -1
+
+[t=0.0057846s, 19132 KB] Options related to size limits and shrinking: 
+[t=0.00580892s, 19132 KB] Transition system size limit: 50000
+[t=0.00583295s, 19132 KB] Transition system size limit right before merge: 50000
+[t=0.00585669s, 19132 KB] Threshold to trigger shrinking right before merge: 1
+
+[t=0.00588219s, 19132 KB] Pruning unreachable states: yes
+[t=0.00590596s, 19132 KB] Pruning irrelevant states: yes
+
+[t=0.00593185s, 19132 KB] Label reduction options:
+[t=0.00595555s, 19132 KB] Before merging: disabled
+[t=0.00597932s, 19132 KB] Before shrinking: enabled
+[t=0.00600285s, 19132 KB] Method: all transition systems with fixpoint computation
+[t=0.00602659s, 19132 KB] System order: random
+
+[t=0.00605203s, 19132 KB] Main loop max time in seconds: inf
+
+
+[t=0.00608903s, 19132 KB] Building atomic transition systems... 
+[t=0.00734058s, 21576 KB] M&S algorithm timer: 0.00203847s (after computation of atomic factors)
+
+[t=0.00740855s, 21576 KB] Starting main loop without a time limit.
+[t=0.00744511s, 21576 KB] building causal graph...done! [t=0.000376897s]
+[t=0.00787155s, 21576 KB] SCCs of the causal graph:
+[t=0.00792986s, 21576 KB] [0, 10, 31, 33, 34, 19, 15, 38, 36, 37, 16, 27, 14, 22, 5, 1, 6, 9, 2, 4, 7, 23, 17, 26, 21, 24, 25, 8, 43, 11, 3, 12, 13, 30, 20, 18, 32, 41, 35, 29, 42, 28, 40, 44, 39, 45, 46, 47, 48]
+[t=0.00795987s, 21576 KB] Only one single SCC
+[t=0.00819106s, 21576 KB] Next pair of indices: (10, 46)
+[t=0.00821968s, 21576 KB] M&S algorithm main loop timer: 0.000838758s (after computation of next merge)
+[t=0.0477593s, 21576 KB] M&S algorithm main loop timer: 0.0403853s (after merging)
+
+[t=0.0479877s, 21576 KB] Next pair of indices: (0, 49)
+[t=0.0480162s, 21576 KB] M&S algorithm main loop timer: 0.0406306s (after computation of next merge)
+[t=0.0857285s, 21576 KB] M&S algorithm main loop timer: 0.0783537s (after merging)
+
+[t=0.0859559s, 21576 KB] Next pair of indices: (13, 50)
+[t=0.0859843s, 21576 KB] M&S algorithm main loop timer: 0.0785986s (after computation of next merge)
+[t=0.122431s, 21576 KB] M&S algorithm main loop timer: 0.115056s (after merging)
+
+[t=0.122654s, 21576 KB] Next pair of indices: (12, 51)
+[t=0.122682s, 21576 KB] M&S algorithm main loop timer: 0.115297s (after computation of next merge)
+[t=0.157148s, 21576 KB] M&S algorithm main loop timer: 0.149774s (after merging)
+
+[t=0.157381s, 21576 KB] Next pair of indices: (3, 52)
+[t=0.15741s, 21576 KB] M&S algorithm main loop timer: 0.150024s (after computation of next merge)
+[t=0.19081s, 21576 KB] M&S algorithm main loop timer: 0.183433s (after merging)
+
+[t=0.191024s, 21576 KB] Next pair of indices: (11, 53)
+[t=0.191054s, 21576 KB] M&S algorithm main loop timer: 0.183669s (after computation of next merge)
+[t=0.222952s, 21576 KB] M&S algorithm main loop timer: 0.215575s (after merging)
+
+[t=0.223175s, 21576 KB] Next pair of indices: (16, 54)
+[t=0.223204s, 21576 KB] M&S algorithm main loop timer: 0.215818s (after computation of next merge)
+[t=0.253972s, 21576 KB] M&S algorithm main loop timer: 0.246597s (after merging)
+
+[t=0.254209s, 21576 KB] Next pair of indices: (27, 55)
+[t=0.254238s, 21576 KB] M&S algorithm main loop timer: 0.246861s (after computation of next merge)
+[t=0.28418s, 21576 KB] M&S algorithm main loop timer: 0.276802s (after merging)
+
+[t=0.284447s, 21576 KB] Next pair of indices: (14, 56)
+[t=0.284477s, 21576 KB] M&S algorithm main loop timer: 0.277091s (after computation of next merge)
+[t=0.313904s, 21840 KB] M&S algorithm main loop timer: 0.306527s (after merging)
+
+[t=0.31421s, 21840 KB] Next pair of indices: (22, 57)
+[t=0.314239s, 21840 KB] M&S algorithm main loop timer: 0.306865s (after computation of next merge)
+[t=0.344665s, 22632 KB] M&S algorithm main loop timer: 0.337289s (after merging)
+
+[t=0.345056s, 22632 KB] Next pair of indices: (5, 58)
+[t=0.345084s, 22632 KB] M&S algorithm main loop timer: 0.337698s (after computation of next merge)
+[t=0.380044s, 24500 KB] M&S algorithm main loop timer: 0.372669s (after merging)
+
+[t=0.380614s, 24500 KB] Next pair of indices: (1, 59)
+[t=0.380643s, 24500 KB] M&S algorithm main loop timer: 0.373258s (after computation of next merge)
+[t=0.424777s, 28168 KB] M&S algorithm main loop timer: 0.417416s (after merging)
+
+[t=0.425745s, 28168 KB] Next pair of indices: (6, 60)
+[t=0.425775s, 28168 KB] M&S algorithm main loop timer: 0.41839s (after computation of next merge)
+[t=0.491736s, 36008 KB] M&S algorithm main loop timer: 0.484427s (after merging)
+
+[t=0.493618s, 36008 KB] Next pair of indices: (8, 61)
+[t=0.493672s, 36008 KB] M&S algorithm main loop timer: 0.486287s (after computation of next merge)
+[t=0.622072s, 54288 KB] M&S algorithm main loop timer: 0.614779s (after merging)
+
+[t=0.625692s, 54288 KB] Next pair of indices: (9, 62)
+[t=0.625768s, 54288 KB] M&S algorithm main loop timer: 0.618382s (after computation of next merge)
+[t=0.754787s, 54288 KB] M&S algorithm main loop timer: 0.747493s (after shrinking)
+[t=0.828987s, 54288 KB] M&S algorithm main loop timer: 0.821687s (after merging)
+
+[t=0.832378s, 54288 KB] Next pair of indices: (2, 63)
+[t=0.832454s, 54288 KB] M&S algorithm main loop timer: 0.82507s (after computation of next merge)
+[t=0.921764s, 54288 KB] M&S algorithm main loop timer: 0.914697s (after shrinking)
+[t=0.922195s, 54288 KB] M&S algorithm main loop timer: 0.914814s (after merging)
+
+[t=0.922395s, 54288 KB] Next pair of indices: (4, 64)
+[t=0.922424s, 54288 KB] M&S algorithm main loop timer: 0.915039s (after computation of next merge)
+[t=0.954998s, 54288 KB] M&S algorithm main loop timer: 0.947629s (after label reduction)
+[t=0.955075s, 54288 KB] M&S algorithm main loop timer: 0.947697s (after merging)
+
+[t=0.955239s, 54288 KB] Next pair of indices: (7, 65)
+[t=0.955266s, 54288 KB] M&S algorithm main loop timer: 0.947891s (after computation of next merge)
+[t=0.97113s, 54288 KB] M&S algorithm main loop timer: 0.963755s (after merging)
+
+[t=0.971312s, 54288 KB] Next pair of indices: (21, 66)
+[t=0.971342s, 54288 KB] M&S algorithm main loop timer: 0.963957s (after computation of next merge)
+[t=0.986s, 54288 KB] M&S algorithm main loop timer: 0.978625s (after merging)
+
+[t=0.98617s, 54288 KB] Next pair of indices: (23, 67)
+[t=0.986197s, 54288 KB] M&S algorithm main loop timer: 0.978811s (after computation of next merge)
+[t=1.00011s, 54288 KB] M&S algorithm main loop timer: 0.992732s (after merging)
+
+[t=1.00029s, 54288 KB] Next pair of indices: (17, 68)
+[t=1.00032s, 54288 KB] M&S algorithm main loop timer: 0.992934s (after computation of next merge)
+[t=1.01342s, 54288 KB] M&S algorithm main loop timer: 1.00604s (after merging)
+
+[t=1.0136s, 54288 KB] Next pair of indices: (24, 69)
+[t=1.01363s, 54288 KB] M&S algorithm main loop timer: 1.00624s (after computation of next merge)
+[t=1.02618s, 54288 KB] M&S algorithm main loop timer: 1.01881s (after merging)
+
+[t=1.02638s, 54288 KB] Next pair of indices: (25, 70)
+[t=1.02641s, 54288 KB] M&S algorithm main loop timer: 1.01902s (after computation of next merge)
+[t=1.03853s, 54288 KB] M&S algorithm main loop timer: 1.03115s (after merging)
+
+[t=1.03874s, 54288 KB] Next pair of indices: (26, 71)
+[t=1.03876s, 54288 KB] M&S algorithm main loop timer: 1.03138s (after computation of next merge)
+[t=1.05276s, 54288 KB] M&S algorithm main loop timer: 1.04538s (after merging)
+
+[t=1.05301s, 54288 KB] Next pair of indices: (28, 72)
+[t=1.05304s, 54288 KB] M&S algorithm main loop timer: 1.04565s (after computation of next merge)
+[t=1.0671s, 54288 KB] M&S algorithm main loop timer: 1.05972s (after merging)
+
+[t=1.06745s, 54288 KB] Next pair of indices: (30, 73)
+[t=1.06748s, 54288 KB] M&S algorithm main loop timer: 1.06009s (after computation of next merge)
+[t=1.08606s, 54288 KB] M&S algorithm main loop timer: 1.07868s (after merging)
+
+[t=1.08658s, 54288 KB] Next pair of indices: (20, 74)
+[t=1.08661s, 54288 KB] M&S algorithm main loop timer: 1.07922s (after computation of next merge)
+[t=1.11623s, 54288 KB] M&S algorithm main loop timer: 1.10887s (after merging)
+
+[t=1.11717s, 54288 KB] Next pair of indices: (18, 75)
+[t=1.1172s, 54288 KB] M&S algorithm main loop timer: 1.10981s (after computation of next merge)
+[t=1.18939s, 54288 KB] M&S algorithm main loop timer: 1.18211s (after merging)
+
+[t=1.19146s, 54288 KB] Next pair of indices: (19, 76)
+[t=1.19152s, 54288 KB] M&S algorithm main loop timer: 1.18414s (after computation of next merge)
+[t=1.32779s, 61388 KB] M&S algorithm main loop timer: 1.3205s (after merging)
+
+[t=1.33152s, 61388 KB] Next pair of indices: (15, 77)
+[t=1.33161s, 61388 KB] M&S algorithm main loop timer: 1.32423s (after computation of next merge)
+[t=1.45756s, 61388 KB] M&S algorithm main loop timer: 1.45027s (after shrinking)
+[t=1.5463s, 61388 KB] M&S algorithm main loop timer: 1.539s (after merging)
+
+[t=1.54987s, 61388 KB] Next pair of indices: (29, 78)
+[t=1.54996s, 61388 KB] M&S algorithm main loop timer: 1.54257s (after computation of next merge)
+[t=1.63719s, 61388 KB] M&S algorithm main loop timer: 1.63013s (after shrinking)
+[t=1.63889s, 61388 KB] M&S algorithm main loop timer: 1.63152s (after merging)
+
+[t=1.63904s, 61388 KB] Next pair of indices: (31, 79)
+[t=1.63907s, 61388 KB] M&S algorithm main loop timer: 1.63169s (after computation of next merge)
+[t=1.64817s, 61388 KB] M&S algorithm main loop timer: 1.6408s (after label reduction)
+[t=1.64825s, 61388 KB] M&S algorithm main loop timer: 1.64088s (after merging)
+
+[t=1.64837s, 61388 KB] Next pair of indices: (33, 80)
+[t=1.6484s, 61388 KB] M&S algorithm main loop timer: 1.64102s (after computation of next merge)
+[t=1.65257s, 61388 KB] M&S algorithm main loop timer: 1.6452s (after merging)
+
+[t=1.65269s, 61388 KB] Next pair of indices: (34, 81)
+[t=1.65271s, 61388 KB] M&S algorithm main loop timer: 1.64533s (after computation of next merge)
+[t=1.65647s, 61388 KB] M&S algorithm main loop timer: 1.6491s (after merging)
+
+[t=1.65658s, 61388 KB] Next pair of indices: (35, 82)
+[t=1.65661s, 61388 KB] M&S algorithm main loop timer: 1.64922s (after computation of next merge)
+[t=1.66007s, 61388 KB] M&S algorithm main loop timer: 1.65269s (after merging)
+
+[t=1.66016s, 61388 KB] Next pair of indices: (36, 83)
+[t=1.66019s, 61388 KB] M&S algorithm main loop timer: 1.65281s (after computation of next merge)
+[t=1.6634s, 61388 KB] M&S algorithm main loop timer: 1.65602s (after merging)
+
+[t=1.66351s, 61388 KB] Next pair of indices: (37, 84)
+[t=1.66353s, 61388 KB] M&S algorithm main loop timer: 1.65615s (after computation of next merge)
+[t=1.66669s, 61388 KB] M&S algorithm main loop timer: 1.65931s (after merging)
+
+[t=1.6668s, 61388 KB] Next pair of indices: (38, 85)
+[t=1.66683s, 61388 KB] M&S algorithm main loop timer: 1.65945s (after computation of next merge)
+[t=1.6702s, 61388 KB] M&S algorithm main loop timer: 1.66282s (after merging)
+
+[t=1.67033s, 61388 KB] Next pair of indices: (39, 86)
+[t=1.67036s, 61388 KB] M&S algorithm main loop timer: 1.66297s (after computation of next merge)
+[t=1.6745s, 61388 KB] M&S algorithm main loop timer: 1.66712s (after merging)
+
+[t=1.67468s, 61388 KB] Next pair of indices: (40, 87)
+[t=1.6747s, 61388 KB] M&S algorithm main loop timer: 1.66732s (after computation of next merge)
+[t=1.68089s, 61388 KB] M&S algorithm main loop timer: 1.67351s (after merging)
+
+[t=1.68117s, 61388 KB] Next pair of indices: (41, 88)
+[t=1.68119s, 61388 KB] M&S algorithm main loop timer: 1.67381s (after computation of next merge)
+[t=1.69268s, 61388 KB] M&S algorithm main loop timer: 1.68531s (after merging)
+
+[t=1.69313s, 61388 KB] Next pair of indices: (32, 89)
+[t=1.69316s, 61388 KB] M&S algorithm main loop timer: 1.68577s (after computation of next merge)
+[t=1.71743s, 61388 KB] M&S algorithm main loop timer: 1.71009s (after merging)
+
+[t=1.71837s, 61388 KB] Next pair of indices: (42, 90)
+[t=1.71841s, 61388 KB] M&S algorithm main loop timer: 1.71103s (after computation of next merge)
+[t=1.73672s, 61388 KB] M&S algorithm main loop timer: 1.72942s (after shrinking)
+[t=1.73711s, 61388 KB] M&S algorithm main loop timer: 1.72973s (after merging)
+
+[t=1.7372s, 61388 KB] Next pair of indices: (44, 91)
+[t=1.73722s, 61388 KB] M&S algorithm main loop timer: 1.72984s (after computation of next merge)
+[t=1.73851s, 61388 KB] M&S algorithm main loop timer: 1.73114s (after label reduction)
+[t=1.7386s, 61388 KB] M&S algorithm main loop timer: 1.73122s (after shrinking)
+[t=1.73916s, 61388 KB] M&S algorithm main loop timer: 1.73179s (after merging)
+[t=1.73928s, 61388 KB] M&S algorithm main loop timer: 1.7319s (after pruning)
+
+[t=1.73934s, 61388 KB] Next pair of indices: (45, 92)
+[t=1.73937s, 61388 KB] M&S algorithm main loop timer: 1.73198s (after computation of next merge)
+[t=1.74016s, 61388 KB] M&S algorithm main loop timer: 1.73278s (after label reduction)
+[t=1.75058s, 61388 KB] M&S algorithm main loop timer: 1.74321s (after merging)
+
+[t=1.75196s, 61388 KB] Next pair of indices: (43, 93)
+[t=1.75199s, 61388 KB] M&S algorithm main loop timer: 1.74461s (after computation of next merge)
+[t=1.75257s, 61388 KB] M&S algorithm main loop timer: 1.74519s (after label reduction)
+[t=1.76891s, 61388 KB] M&S algorithm main loop timer: 1.76171s (after shrinking)
+[t=1.78698s, 61388 KB] M&S algorithm main loop timer: 1.77961s (after merging)
+
+[t=1.78925s, 61388 KB] Next pair of indices: (47, 94)
+[t=1.78929s, 61388 KB] M&S algorithm main loop timer: 1.7819s (after computation of next merge)
+[t=1.78975s, 61388 KB] M&S algorithm main loop timer: 1.78237s (after label reduction)
+[t=1.89855s, 61388 KB] M&S algorithm main loop timer: 1.8912s (after shrinking)
+[t=1.92683s, 61388 KB] M&S algorithm main loop timer: 1.91947s (after merging)
+
+[t=1.92985s, 61388 KB] Next pair of indices: (48, 95)
+[t=1.92988s, 61388 KB] M&S algorithm main loop timer: 1.9225s (after computation of next merge)
+[t=1.93131s, 61388 KB] M&S algorithm main loop timer: 1.92393s (after label reduction)
+[t=2.03633s, 61388 KB] M&S algorithm main loop timer: 2.02906s (after shrinking)
+[t=2.06969s, 61388 KB] M&S algorithm main loop timer: 2.06238s (after merging)
+
+[t=2.07287s, 61388 KB] End of merge-and-shrink algorithm, statistics:
+[t=2.0729s, 61388 KB] Main loop runtime: 2.06552s
+[t=2.07293s, 61388 KB] Maximum intermediate abstraction size: 49928
+[t=2.07296s, 61388 KB] Final peak memory increase of merge-and-shrink algorithm: 42256 KB
+[t=2.07301s, 61388 KB] Merge-and-shrink algorithm runtime: 2.06769s
+
+[t=2.07304s, 61388 KB] Number of remaining factors: 1
+[t=2.07323s, 61388 KB] Number of factors kept: 1
+[t=2.07326s, 61388 KB] Done initializing merge-and-shrink heuristic.
+
+[t=2.07421s, 61388 KB] Building successor generator...done!
+[t=2.07449s, 61388 KB] peak memory difference for successor generator creation: 0 KB
+[t=2.07452s, 61388 KB] time for successor generation creation: 0.000190757s
+[t=2.07455s, 61388 KB] Variables: 49
+[t=2.07458s, 61388 KB] FactPairs: 233
+[t=2.07461s, 61388 KB] Bytes per state: 12
+[t=2.07488s, 61388 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=2.07496s, 61388 KB] New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 8
+[t=2.07499s, 61388 KB] g=0, 1 evaluated, 0 expanded
+[t=2.07501s, 61388 KB] f = 8, 1 evaluated, 0 expanded
+[t=2.07504s, 61388 KB] Initial heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 8
+[t=2.07507s, 61388 KB] pruning method: none
+[t=2.07524s, 61388 KB] f = 9, 28 evaluated, 26 expanded
+[t=2.0755s, 61388 KB] f = 10, 85 evaluated, 80 expanded
+[t=2.07594s, 61388 KB] f = 11, 188 evaluated, 177 expanded
+[t=2.07633s, 61388 KB] New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 7
+[t=2.07636s, 61388 KB] g=4, 287 evaluated, 255 expanded
+[t=2.07648s, 61388 KB] New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 6
+[t=2.0765s, 61388 KB] g=5, 312 evaluated, 275 expanded
+[t=2.07656s, 61388 KB] New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 5
+[t=2.07658s, 61388 KB] g=6, 320 evaluated, 280 expanded
+[t=2.07662s, 61388 KB] New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 4
+[t=2.07664s, 61388 KB] g=7, 322 evaluated, 281 expanded
+[t=2.07668s, 61388 KB] New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 3
+[t=2.07671s, 61388 KB] g=8, 326 evaluated, 282 expanded
+[t=2.07829s, 61388 KB] f = 12, 725 evaluated, 670 expanded
+[t=2.08306s, 61388 KB] f = 13, 1990 evaluated, 1863 expanded
+[t=2.08393s, 61388 KB] New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 2
+[t=2.08396s, 61388 KB] g=11, 2216 evaluated, 2074 expanded
+[t=2.09099s, 61388 KB] f = 14, 4095 evaluated, 3858 expanded
+[t=2.10175s, 61388 KB] f = 15, 6948 evaluated, 6649 expanded
+[t=2.11381s, 61388 KB] f = 16, 10130 evaluated, 9740 expanded
+[t=2.12904s, 61388 KB] f = 17, 14157 evaluated, 13689 expanded
+[t=2.14425s, 61388 KB] f = 18, 18086 evaluated, 17535 expanded
+[t=2.1651s, 61388 KB] f = 19, 23552 evaluated, 22921 expanded
+[t=2.18695s, 61388 KB] f = 20, 29164 evaluated, 28381 expanded
+[t=2.21845s, 61388 KB] f = 21, 37442 evaluated, 36513 expanded
+[t=2.25467s, 61388 KB] f = 22, 46995 evaluated, 45816 expanded
+[t=2.30618s, 61388 KB] f = 23, 60192 evaluated, 58680 expanded
+[t=2.36795s, 61388 KB] f = 24, 76530 evaluated, 74704 expanded
+[t=2.43685s, 61388 KB] f = 25, 94585 evaluated, 92450 expanded
+[t=2.43698s, 61388 KB] New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 1
+[t=2.43701s, 61388 KB] g=24, 94610 evaluated, 92460 expanded
+[t=2.52009s, 61388 KB] f = 26, 115442 evaluated, 113065 expanded
+[t=2.59867s, 61388 KB] f = 27, 136058 evaluated, 133430 expanded
+[t=2.6879s, 61388 KB] f = 28, 159467 evaluated, 156587 expanded
+[t=2.77511s, 61388 KB] f = 29, 182257 evaluated, 179093 expanded
+[t=2.87423s, 61388 KB] f = 30, 207223 evaluated, 203772 expanded
+[t=2.97631s, 61388 KB] f = 31, 231340 evaluated, 227747 expanded
+[t=3.07049s, 61388 KB] f = 32, 254810 evaluated, 250861 expanded
+[t=3.16932s, 61388 KB] f = 33, 280230 evaluated, 275838 expanded
+[t=3.26836s, 61388 KB] f = 34, 306070 evaluated, 301275 expanded
+[t=3.37549s, 61388 KB] f = 35, 333591 evaluated, 328448 expanded
+[t=3.4686s, 61388 KB] f = 36, 357950 evaluated, 352409 expanded
+[t=3.58289s, 61388 KB] f = 37, 387378 evaluated, 381370 expanded
+[t=3.69387s, 61388 KB] f = 38, 415667 evaluated, 409406 expanded
+[t=3.80829s, 61388 KB] f = 39, 445277 evaluated, 438882 expanded
+[t=3.92022s, 61388 KB] f = 40, 469911 evaluated, 463501 expanded
+[t=4.00942s, 61388 KB] f = 41, 493105 evaluated, 486717 expanded
+[t=4.07963s, 61388 KB] f = 42, 511509 evaluated, 505156 expanded
+[t=4.14095s, 61388 KB] f = 43, 526902 evaluated, 520580 expanded
+[t=4.18804s, 61388 KB] f = 44, 538891 evaluated, 532438 expanded
+[t=4.23464s, 61388 KB] f = 45, 550824 evaluated, 544158 expanded
+[t=4.27629s, 61388 KB] f = 46, 561444 evaluated, 554646 expanded
+[t=4.31681s, 61388 KB] f = 47, 571760 evaluated, 564918 expanded
+[t=4.36138s, 61388 KB] f = 48, 582732 evaluated, 575720 expanded
+[t=4.41136s, 61388 KB] f = 49, 595366 evaluated, 588234 expanded
+[t=4.45349s, 61388 KB] f = 50, 606148 evaluated, 599010 expanded
+[t=4.45376s, 61388 KB] New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1): 0
+[t=4.4538s, 61388 KB] g=50, 606218 evaluated, 599039 expanded
+[t=4.45383s, 61388 KB] Solution found!
+[t=4.45395s, 61388 KB] Actual search time: 2.37887s
+move player-01 pos-09-03 pos-08-03 dir-left (0)
+move player-01 pos-08-03 pos-07-03 dir-left (0)
+move player-01 pos-07-03 pos-06-03 dir-left (0)
+move player-01 pos-06-03 pos-05-03 dir-left (0)
+move player-01 pos-05-03 pos-04-03 dir-left (0)
+move player-01 pos-04-03 pos-03-03 dir-left (0)
+move player-01 pos-03-03 pos-03-04 dir-down (0)
+move player-01 pos-03-04 pos-03-05 dir-down (0)
+move player-01 pos-03-05 pos-03-06 dir-down (0)
+push-to-nongoal player-01 stone-02 pos-03-06 pos-04-06 pos-05-06 dir-right (1)
+push-to-nongoal player-01 stone-02 pos-04-06 pos-05-06 pos-06-06 dir-right (1)
+move player-01 pos-05-06 pos-05-05 dir-up (0)
+move player-01 pos-05-05 pos-06-05 dir-right (0)
+push-to-nongoal player-01 stone-02 pos-06-05 pos-06-06 pos-06-07 dir-down (1)
+move player-01 pos-06-06 pos-07-06 dir-right (0)
+move player-01 pos-07-06 pos-07-07 dir-down (0)
+move player-01 pos-07-07 pos-07-08 dir-down (0)
+move player-01 pos-07-08 pos-06-08 dir-left (0)
+move player-01 pos-06-08 pos-06-09 dir-down (0)
+move player-01 pos-06-09 pos-05-09 dir-left (0)
+move player-01 pos-05-09 pos-04-09 dir-left (0)
+move player-01 pos-04-09 pos-04-08 dir-up (0)
+push-to-nongoal player-01 stone-03 pos-04-08 pos-04-07 pos-04-06 dir-up (1)
+move player-01 pos-04-07 pos-04-08 dir-down (0)
+move player-01 pos-04-08 pos-04-09 dir-down (0)
+move player-01 pos-04-09 pos-05-09 dir-right (0)
+move player-01 pos-05-09 pos-06-09 dir-right (0)
+move player-01 pos-06-09 pos-06-08 dir-up (0)
+move player-01 pos-06-08 pos-07-08 dir-right (0)
+move player-01 pos-07-08 pos-07-07 dir-up (0)
+move player-01 pos-07-07 pos-07-06 dir-up (0)
+move player-01 pos-07-06 pos-06-06 dir-left (0)
+move player-01 pos-06-06 pos-05-06 dir-left (0)
+move player-01 pos-05-06 pos-05-05 dir-up (0)
+push-to-nongoal player-01 stone-01 pos-05-05 pos-04-05 pos-03-05 dir-left (1)
+move player-01 pos-04-05 pos-05-05 dir-right (0)
+move player-01 pos-05-05 pos-05-06 dir-down (0)
+move player-01 pos-05-06 pos-06-06 dir-right (0)
+move player-01 pos-06-06 pos-07-06 dir-right (0)
+move player-01 pos-07-06 pos-07-07 dir-down (0)
+move player-01 pos-07-07 pos-07-08 dir-down (0)
+move player-01 pos-07-08 pos-06-08 dir-left (0)
+move player-01 pos-06-08 pos-06-09 dir-down (0)
+move player-01 pos-06-09 pos-05-09 dir-left (0)
+move player-01 pos-05-09 pos-04-09 dir-left (0)
+move player-01 pos-04-09 pos-04-08 dir-up (0)
+move player-01 pos-04-08 pos-04-07 dir-up (0)
+push-to-nongoal player-01 stone-03 pos-04-07 pos-04-06 pos-04-05 dir-up (1)
+move player-01 pos-04-06 pos-03-06 dir-left (0)
+push-to-nongoal player-01 stone-01 pos-03-06 pos-03-05 pos-03-04 dir-up (1)
+push-to-nongoal player-01 stone-01 pos-03-05 pos-03-04 pos-03-03 dir-up (1)
+move player-01 pos-03-04 pos-02-04 dir-left (0)
+move player-01 pos-02-04 pos-02-03 dir-up (0)
+push-to-nongoal player-01 stone-01 pos-02-03 pos-03-03 pos-04-03 dir-right (1)
+push-to-nongoal player-01 stone-01 pos-03-03 pos-04-03 pos-05-03 dir-right (1)
+push-to-goal player-01 stone-01 pos-04-03 pos-05-03 pos-06-03 dir-right (1)
+push-to-nongoal player-01 stone-01 pos-05-03 pos-06-03 pos-07-03 dir-right (1)
+push-to-nongoal player-01 stone-01 pos-06-03 pos-07-03 pos-08-03 dir-right (1)
+push-to-nongoal player-01 stone-01 pos-07-03 pos-08-03 pos-09-03 dir-right (1)
+move player-01 pos-08-03 pos-08-04 dir-down (0)
+move player-01 pos-08-04 pos-09-04 dir-right (0)
+move player-01 pos-09-04 pos-10-04 dir-right (0)
+move player-01 pos-10-04 pos-11-04 dir-right (0)
+move player-01 pos-11-04 pos-11-03 dir-up (0)
+move player-01 pos-11-03 pos-11-02 dir-up (0)
+move player-01 pos-11-02 pos-10-02 dir-left (0)
+move player-01 pos-10-02 pos-09-02 dir-left (0)
+push-to-nongoal player-01 stone-01 pos-09-02 pos-09-03 pos-09-04 dir-down (1)
+move player-01 pos-09-03 pos-08-03 dir-left (0)
+move player-01 pos-08-03 pos-07-03 dir-left (0)
+move player-01 pos-07-03 pos-06-03 dir-left (0)
+move player-01 pos-06-03 pos-05-03 dir-left (0)
+move player-01 pos-05-03 pos-04-03 dir-left (0)
+move player-01 pos-04-03 pos-03-03 dir-left (0)
+move player-01 pos-03-03 pos-03-04 dir-down (0)
+move player-01 pos-03-04 pos-03-05 dir-down (0)
+move player-01 pos-03-05 pos-03-06 dir-down (0)
+move player-01 pos-03-06 pos-04-06 dir-right (0)
+move player-01 pos-04-06 pos-05-06 dir-right (0)
+move player-01 pos-05-06 pos-05-05 dir-up (0)
+push-to-nongoal player-01 stone-03 pos-05-05 pos-04-05 pos-03-05 dir-left (1)
+move player-01 pos-04-05 pos-04-06 dir-down (0)
+move player-01 pos-04-06 pos-03-06 dir-left (0)
+push-to-nongoal player-01 stone-03 pos-03-06 pos-03-05 pos-03-04 dir-up (1)
+push-to-nongoal player-01 stone-03 pos-03-05 pos-03-04 pos-03-03 dir-up (1)
+move player-01 pos-03-04 pos-02-04 dir-left (0)
+move player-01 pos-02-04 pos-02-03 dir-up (0)
+push-to-nongoal player-01 stone-03 pos-02-03 pos-03-03 pos-04-03 dir-right (1)
+push-to-nongoal player-01 stone-03 pos-03-03 pos-04-03 pos-05-03 dir-right (1)
+push-to-goal player-01 stone-03 pos-04-03 pos-05-03 pos-06-03 dir-right (1)
+push-to-nongoal player-01 stone-03 pos-05-03 pos-06-03 pos-07-03 dir-right (1)
+push-to-nongoal player-01 stone-03 pos-06-03 pos-07-03 pos-08-03 dir-right (1)
+push-to-nongoal player-01 stone-03 pos-07-03 pos-08-03 pos-09-03 dir-right (1)
+move player-01 pos-08-03 pos-07-03 dir-left (0)
+move player-01 pos-07-03 pos-06-03 dir-left (0)
+move player-01 pos-06-03 pos-05-03 dir-left (0)
+move player-01 pos-05-03 pos-04-03 dir-left (0)
+move player-01 pos-04-03 pos-03-03 dir-left (0)
+move player-01 pos-03-03 pos-03-04 dir-down (0)
+move player-01 pos-03-04 pos-03-05 dir-down (0)
+move player-01 pos-03-05 pos-03-06 dir-down (0)
+move player-01 pos-03-06 pos-03-07 dir-down (0)
+move player-01 pos-03-07 pos-04-07 dir-right (0)
+move player-01 pos-04-07 pos-04-08 dir-down (0)
+move player-01 pos-04-08 pos-04-09 dir-down (0)
+move player-01 pos-04-09 pos-05-09 dir-right (0)
+move player-01 pos-05-09 pos-06-09 dir-right (0)
+move player-01 pos-06-09 pos-06-08 dir-up (0)
+push-to-nongoal player-01 stone-02 pos-06-08 pos-06-07 pos-06-06 dir-up (1)
+move player-01 pos-06-07 pos-07-07 dir-right (0)
+move player-01 pos-07-07 pos-07-06 dir-up (0)
+push-to-nongoal player-01 stone-02 pos-07-06 pos-06-06 pos-05-06 dir-left (1)
+push-to-nongoal player-01 stone-02 pos-06-06 pos-05-06 pos-04-06 dir-left (1)
+push-to-nongoal player-01 stone-02 pos-05-06 pos-04-06 pos-03-06 dir-left (1)
+move player-01 pos-04-06 pos-04-07 dir-down (0)
+move player-01 pos-04-07 pos-03-07 dir-left (0)
+push-to-nongoal player-01 stone-02 pos-03-07 pos-03-06 pos-03-05 dir-up (1)
+push-to-nongoal player-01 stone-02 pos-03-06 pos-03-05 pos-03-04 dir-up (1)
+push-to-nongoal player-01 stone-02 pos-03-05 pos-03-04 pos-03-03 dir-up (1)
+move player-01 pos-03-04 pos-02-04 dir-left (0)
+move player-01 pos-02-04 pos-02-03 dir-up (0)
+push-to-nongoal player-01 stone-02 pos-02-03 pos-03-03 pos-04-03 dir-right (1)
+push-to-nongoal player-01 stone-02 pos-03-03 pos-04-03 pos-05-03 dir-right (1)
+push-to-goal player-01 stone-02 pos-04-03 pos-05-03 pos-06-03 dir-right (1)
+push-to-nongoal player-01 stone-02 pos-05-03 pos-06-03 pos-07-03 dir-right (1)
+push-to-nongoal player-01 stone-02 pos-06-03 pos-07-03 pos-08-03 dir-right (1)
+move player-01 pos-07-03 pos-07-04 dir-down (0)
+move player-01 pos-07-04 pos-08-04 dir-right (0)
+move player-01 pos-08-04 pos-08-05 dir-down (0)
+move player-01 pos-08-05 pos-09-05 dir-right (0)
+move player-01 pos-09-05 pos-10-05 dir-right (0)
+move player-01 pos-10-05 pos-10-04 dir-up (0)
+push-to-nongoal player-01 stone-01 pos-10-04 pos-09-04 pos-08-04 dir-left (1)
+move player-01 pos-09-04 pos-10-04 dir-right (0)
+move player-01 pos-10-04 pos-11-04 dir-right (0)
+move player-01 pos-11-04 pos-11-03 dir-up (0)
+move player-01 pos-11-03 pos-11-02 dir-up (0)
+move player-01 pos-11-02 pos-10-02 dir-left (0)
+move player-01 pos-10-02 pos-09-02 dir-left (0)
+push-to-nongoal player-01 stone-03 pos-09-02 pos-09-03 pos-09-04 dir-down (1)
+push-to-nongoal player-01 stone-02 pos-09-03 pos-08-03 pos-07-03 dir-left (1)
+push-to-goal player-01 stone-02 pos-08-03 pos-07-03 pos-06-03 dir-left (1)
+move player-01 pos-07-03 pos-08-03 dir-right (0)
+move player-01 pos-08-03 pos-09-03 dir-right (0)
+move player-01 pos-09-03 pos-09-02 dir-up (0)
+move player-01 pos-09-02 pos-10-02 dir-right (0)
+move player-01 pos-10-02 pos-11-02 dir-right (0)
+move player-01 pos-11-02 pos-11-03 dir-down (0)
+move player-01 pos-11-03 pos-11-04 dir-down (0)
+move player-01 pos-11-04 pos-10-04 dir-left (0)
+move player-01 pos-10-04 pos-10-05 dir-down (0)
+move player-01 pos-10-05 pos-09-05 dir-left (0)
+move player-01 pos-09-05 pos-08-05 dir-left (0)
+push-to-nongoal player-01 stone-01 pos-08-05 pos-08-04 pos-08-03 dir-up (1)
+push-to-nongoal player-01 stone-03 pos-08-04 pos-09-04 pos-10-04 dir-right (1)
+push-to-nongoal player-01 stone-03 pos-09-04 pos-10-04 pos-11-04 dir-right (1)
+move player-01 pos-10-04 pos-10-05 dir-down (0)
+move player-01 pos-10-05 pos-11-05 dir-right (0)
+push-to-goal player-01 stone-03 pos-11-05 pos-11-04 pos-11-03 dir-up (1)
+move player-01 pos-11-04 pos-10-04 dir-left (0)
+move player-01 pos-10-04 pos-09-04 dir-left (0)
+move player-01 pos-09-04 pos-08-04 dir-left (0)
+move player-01 pos-08-04 pos-07-04 dir-left (0)
+move player-01 pos-07-04 pos-07-03 dir-up (0)
+push-to-nongoal player-01 stone-02 pos-07-03 pos-06-03 pos-05-03 dir-left (1)
+push-to-nongoal player-01 stone-02 pos-06-03 pos-05-03 pos-04-03 dir-left (1)
+push-to-nongoal player-01 stone-02 pos-05-03 pos-04-03 pos-03-03 dir-left (1)
+push-to-goal player-01 stone-02 pos-04-03 pos-03-03 pos-02-03 dir-left (1)
+move player-01 pos-03-03 pos-04-03 dir-right (0)
+move player-01 pos-04-03 pos-05-03 dir-right (0)
+move player-01 pos-05-03 pos-06-03 dir-right (0)
+move player-01 pos-06-03 pos-07-03 dir-right (0)
+move player-01 pos-07-03 pos-07-04 dir-down (0)
+move player-01 pos-07-04 pos-08-04 dir-right (0)
+move player-01 pos-08-04 pos-09-04 dir-right (0)
+move player-01 pos-09-04 pos-09-03 dir-up (0)
+push-to-nongoal player-01 stone-01 pos-09-03 pos-08-03 pos-07-03 dir-left (1)
+push-to-goal player-01 stone-01 pos-08-03 pos-07-03 pos-06-03 dir-left (1)
+[t=4.45398s, 61388 KB] Plan length: 178 step(s).
+[t=4.45398s, 61388 KB] Plan cost: 50
+[t=4.45398s, 61388 KB] Expanded 599040 state(s).
+[t=4.45398s, 61388 KB] Reopened 0 state(s).
+[t=4.45398s, 61388 KB] Evaluated 606219 state(s).
+[t=4.45398s, 61388 KB] Evaluations: 606219
+[t=4.45398s, 61388 KB] Generated 1526676 state(s).
+[t=4.45398s, 61388 KB] Dead ends: 6406 state(s).
+[t=4.45398s, 61388 KB] Expanded until last jump: 599010 state(s).
+[t=4.45398s, 61388 KB] Reopened until last jump: 0 state(s).
+[t=4.45398s, 61388 KB] Evaluated until last jump: 606148 state(s).
+[t=4.45398s, 61388 KB] Generated until last jump: 1526601 state(s).
+[t=4.45398s, 61388 KB] Number of registered states: 606219
+[t=4.45398s, 61388 KB] Closed list load factor: 606219/1048575 = 0.578136
+[t=4.45398s, 61388 KB] Search time: 2.3791s
+[t=4.45398s, 61388 KB] Total time: 4.45398s
+Solution found.
+Peak memory: 61388 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 4.62s

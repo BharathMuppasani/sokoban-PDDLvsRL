@@ -1,0 +1,271 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/scorpion3/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-8.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 38 rules.
+Computing model... [0.020s CPU, 0.015s wall-clock]
+952 relevant atoms
+1506 auxiliary atoms
+2458 final queue length
+3152 total queue pushes
+Completing instantiation... [0.010s CPU, 0.012s wall-clock]
+Instantiating: [0.030s CPU, 0.032s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.010s CPU, 0.003s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+47 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.010s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.013s wall-clock]
+490 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+31 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.006s wall-clock]
+Reordering and filtering variables...
+39 of 39 variables necessary.
+30 of 35 mutex groups necessary.
+302 of 302 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.003s wall-clock]
+Translator variables: 39
+Translator derived variables: 0
+Translator facts: 218
+Translator goal facts: 4
+Translator mutex groups: 30
+Translator total mutex groups size: 180
+Translator operators: 302
+Translator axioms: 0
+Translator task size: 2901
+Translator peak memory: 180648 KB
+Writing output... [0.010s CPU, 0.003s wall-clock]
+Done! [0.080s CPU, 0.071s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/scorpion3/builds/release/bin/downward --search 'astar(maximize([projections(systematic(3), create_complete_transition_system=true)]))' --internal-plan-file /work/bharath/sokoban/sokoban_results/max-systematic-pdb/plan-8.txt < output.sas
+[t=4.5978e-05s, 18452 KB] reading input...
+[t=0.00315355s, 18612 KB] done reading input!
+Warning: plugin diverse_potentials already has argument verbosity
+Warning: plugin ipdb already has argument verbosity
+[t=0.00518176s, 19140 KB] Compute patterns
+[t=0.00522581s, 19140 KB] Generating patterns using: systematic pattern collection generator
+[t=0.00525771s, 19140 KB] building causal graph...done! [t=0.000462302s]
+[t=0.00746935s, 19880 KB] Found 2488 SGA patterns.
+[t=0.0153246s, 19880 KB] Found 2674 interesting patterns.
+[t=0.0158829s, 19880 KB] systematic pattern collection generator number of patterns: 2674
+[t=0.0159375s, 19880 KB] systematic pattern collection generator total PDB size: 117848
+[t=0.0160314s, 19880 KB] systematic pattern collection generator computation time: 0.0106239s
+[t=0.0160596s, 19880 KB] Number of patterns: 2674
+[t=0.0160838s, 19880 KB] Maximum pattern size: 3
+[t=0.0161073s, 19880 KB] Time for computing patterns: 0.0109489s
+[t=0.0161317s, 19880 KB] Build projections
+[t=1.8606s, 53492 KB] Time for building projections: 1.84458s
+[t=1.8608s, 53492 KB] Number of projections: 2674
+[t=1.86084s, 53492 KB] Number of states in projections: 117848
+[t=1.86089s, 53492 KB] Abstractions: 2674
+[t=1.86092s, 53492 KB] Abstractions per generator: [2674]
+[t=1.8832s, 54772 KB] Building successor generator...done!
+[t=1.88389s, 54772 KB] peak memory difference for successor generator creation: 0 KB
+[t=1.88392s, 54772 KB] time for successor generation creation: 0.000232599s
+[t=1.88396s, 54772 KB] Variables: 39
+[t=1.88398s, 54772 KB] FactPairs: 218
+[t=1.88401s, 54772 KB] Bytes per state: 8
+[t=1.8843s, 54772 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=1.88445s, 54772 KB] New best heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 4
+[t=1.88448s, 54772 KB] g=0, 1 evaluated, 0 expanded
+[t=1.88451s, 54772 KB] f = 4, 1 evaluated, 0 expanded
+[t=1.88454s, 54772 KB] Initial heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 4
+[t=1.88457s, 54772 KB] pruning method: none
+[t=1.88528s, 54772 KB] f = 5, 15 evaluated, 13 expanded
+[t=1.88717s, 54772 KB] f = 6, 59 evaluated, 49 expanded
+[t=1.89096s, 54772 KB] f = 7, 149 evaluated, 125 expanded
+[t=1.89676s, 54772 KB] f = 8, 290 evaluated, 250 expanded
+[t=1.90447s, 54772 KB] f = 9, 477 evaluated, 409 expanded
+[t=1.92125s, 54772 KB] f = 10, 887 evaluated, 759 expanded
+[t=1.9541s, 54772 KB] f = 11, 1697 evaluated, 1454 expanded
+[t=2.00351s, 54772 KB] f = 12, 2913 evaluated, 2509 expanded
+[t=2.05492s, 54772 KB] New best heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 3
+[t=2.05496s, 54772 KB] g=9, 4210 evaluated, 3516 expanded
+[t=2.07278s, 54772 KB] f = 13, 4615 evaluated, 4007 expanded
+[t=2.15484s, 54772 KB] f = 14, 6634 evaluated, 5779 expanded
+[t=2.26433s, 54772 KB] f = 15, 9285 evaluated, 8133 expanded
+[t=2.39553s, 54772 KB] f = 16, 12541 evaluated, 10970 expanded
+[t=2.58856s, 54772 KB] f = 17, 17311 evaluated, 15152 expanded
+[t=2.86214s, 54772 KB] f = 18, 24061 evaluated, 21055 expanded
+[t=2.8751s, 54772 KB] New best heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 2
+[t=2.87514s, 54772 KB] g=16, 24392 evaluated, 21214 expanded
+[t=3.30581s, 54772 KB] f = 19, 34542 evaluated, 30293 expanded
+[t=3.92491s, 54772 KB] f = 20, 49552 evaluated, 43317 expanded
+[t=4.92646s, 55416 KB] f = 21, 73866 evaluated, 64612 expanded
+[t=6.40983s, 55416 KB] f = 22, 109906 evaluated, 96211 expanded
+[t=8.56809s, 56700 KB] f = 23, 162223 evaluated, 142529 expanded
+[t=11.4837s, 58620 KB] f = 24, 233137 evaluated, 205827 expanded
+[t=15.2101s, 58620 KB] f = 25, 323667 evaluated, 287795 expanded
+[t=19.5736s, 58620 KB] f = 26, 429836 evaluated, 383984 expanded
+[t=24.6561s, 62460 KB] f = 27, 552491 evaluated, 496723 expanded
+[t=30.0593s, 62460 KB] f = 28, 683535 evaluated, 617488 expanded
+[t=35.6726s, 62460 KB] f = 29, 819232 evaluated, 744279 expanded
+[t=41.0259s, 72036 KB] f = 30, 947885 evaluated, 864551 expanded
+[t=46.1222s, 72036 KB] f = 31, 1070521 evaluated, 980214 expanded
+[t=46.3464s, 72036 KB] New best heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 1
+[t=46.3465s, 72036 KB] g=30, 1075765 evaluated, 985035 expanded
+[t=46.347s, 72036 KB] New best heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 0
+[t=46.3471s, 72036 KB] g=31, 1075778 evaluated, 985042 expanded
+[t=46.3471s, 72036 KB] Solution found!
+[t=46.3472s, 72036 KB] Actual search time: 44.4626s
+move player-01 pos-03-04 pos-03-05 dir-down (0)
+move player-01 pos-03-05 pos-03-06 dir-down (0)
+push-to-nongoal player-01 stone-01 pos-03-06 pos-04-06 pos-05-06 dir-right (1)
+move player-01 pos-04-06 pos-04-07 dir-down (0)
+move player-01 pos-04-07 pos-05-07 dir-right (0)
+move player-01 pos-05-07 pos-06-07 dir-right (0)
+move player-01 pos-06-07 pos-06-06 dir-up (0)
+move player-01 pos-06-06 pos-06-05 dir-up (0)
+move player-01 pos-06-05 pos-05-05 dir-left (0)
+push-to-nongoal player-01 stone-01 pos-05-05 pos-05-06 pos-05-07 dir-down (1)
+move player-01 pos-05-06 pos-04-06 dir-left (0)
+move player-01 pos-04-06 pos-03-06 dir-left (0)
+move player-01 pos-03-06 pos-02-06 dir-left (0)
+move player-01 pos-02-06 pos-02-07 dir-down (0)
+push-to-nongoal player-01 stone-02 pos-02-07 pos-03-07 pos-04-07 dir-right (1)
+push-to-nongoal player-01 stone-03 pos-03-07 pos-03-08 pos-03-09 dir-down (1)
+push-to-nongoal player-01 stone-04 pos-03-08 pos-04-08 pos-05-08 dir-right (1)
+move player-01 pos-04-08 pos-04-09 dir-down (0)
+move player-01 pos-04-09 pos-04-10 dir-down (0)
+move player-01 pos-04-10 pos-03-10 dir-left (0)
+push-to-nongoal player-01 stone-03 pos-03-10 pos-03-09 pos-03-08 dir-up (1)
+push-to-nongoal player-01 stone-03 pos-03-09 pos-03-08 pos-03-07 dir-up (1)
+push-to-nongoal player-01 stone-03 pos-03-08 pos-03-07 pos-03-06 dir-up (1)
+push-to-goal player-01 stone-03 pos-03-07 pos-03-06 pos-03-05 dir-up (1)
+move player-01 pos-03-06 pos-04-06 dir-right (0)
+move player-01 pos-04-06 pos-05-06 dir-right (0)
+move player-01 pos-05-06 pos-06-06 dir-right (0)
+move player-01 pos-06-06 pos-06-07 dir-down (0)
+move player-01 pos-06-07 pos-06-08 dir-down (0)
+push-to-nongoal player-01 stone-04 pos-06-08 pos-05-08 pos-04-08 dir-left (1)
+move player-01 pos-05-08 pos-06-08 dir-right (0)
+move player-01 pos-06-08 pos-06-07 dir-up (0)
+move player-01 pos-06-07 pos-06-06 dir-up (0)
+move player-01 pos-06-06 pos-05-06 dir-left (0)
+move player-01 pos-05-06 pos-04-06 dir-left (0)
+move player-01 pos-04-06 pos-03-06 dir-left (0)
+push-to-nongoal player-01 stone-03 pos-03-06 pos-03-05 pos-03-04 dir-up (1)
+push-to-goal player-01 stone-03 pos-03-05 pos-03-04 pos-03-03 dir-up (1)
+move player-01 pos-03-04 pos-02-04 dir-left (0)
+move player-01 pos-02-04 pos-02-03 dir-up (0)
+push-to-nongoal player-01 stone-03 pos-02-03 pos-03-03 pos-04-03 dir-right (1)
+move player-01 pos-03-03 pos-03-04 dir-down (0)
+move player-01 pos-03-04 pos-03-05 dir-down (0)
+move player-01 pos-03-05 pos-03-06 dir-down (0)
+move player-01 pos-03-06 pos-04-06 dir-right (0)
+move player-01 pos-04-06 pos-05-06 dir-right (0)
+move player-01 pos-05-06 pos-06-06 dir-right (0)
+move player-01 pos-06-06 pos-06-07 dir-down (0)
+move player-01 pos-06-07 pos-06-08 dir-down (0)
+move player-01 pos-06-08 pos-05-08 dir-left (0)
+push-to-nongoal player-01 stone-01 pos-05-08 pos-05-07 pos-05-06 dir-up (1)
+move player-01 pos-05-07 pos-05-08 dir-down (0)
+push-to-nongoal player-01 stone-04 pos-05-08 pos-04-08 pos-03-08 dir-left (1)
+move player-01 pos-04-08 pos-04-09 dir-down (0)
+move player-01 pos-04-09 pos-03-09 dir-left (0)
+push-to-nongoal player-01 stone-04 pos-03-09 pos-03-08 pos-03-07 dir-up (1)
+push-to-nongoal player-01 stone-04 pos-03-08 pos-03-07 pos-03-06 dir-up (1)
+push-to-goal player-01 stone-04 pos-03-07 pos-03-06 pos-03-05 dir-up (1)
+push-to-nongoal player-01 stone-04 pos-03-06 pos-03-05 pos-03-04 dir-up (1)
+push-to-goal player-01 stone-04 pos-03-05 pos-03-04 pos-03-03 dir-up (1)
+move player-01 pos-03-04 pos-02-04 dir-left (0)
+move player-01 pos-02-04 pos-02-03 dir-up (0)
+move player-01 pos-02-03 pos-02-02 dir-up (0)
+move player-01 pos-02-02 pos-03-02 dir-right (0)
+move player-01 pos-03-02 pos-04-02 dir-right (0)
+push-to-goal player-01 stone-03 pos-04-02 pos-04-03 pos-04-04 dir-down (1)
+push-to-nongoal player-01 stone-04 pos-04-03 pos-03-03 pos-02-03 dir-left (1)
+move player-01 pos-03-03 pos-03-02 dir-up (0)
+move player-01 pos-03-02 pos-02-02 dir-left (0)
+push-to-goal player-01 stone-04 pos-02-02 pos-02-03 pos-02-04 dir-down (1)
+move player-01 pos-02-03 pos-03-03 dir-right (0)
+move player-01 pos-03-03 pos-03-04 dir-down (0)
+move player-01 pos-03-04 pos-03-05 dir-down (0)
+move player-01 pos-03-05 pos-03-06 dir-down (0)
+move player-01 pos-03-06 pos-03-07 dir-down (0)
+move player-01 pos-03-07 pos-03-08 dir-down (0)
+move player-01 pos-03-08 pos-04-08 dir-right (0)
+move player-01 pos-04-08 pos-05-08 dir-right (0)
+move player-01 pos-05-08 pos-06-08 dir-right (0)
+move player-01 pos-06-08 pos-06-07 dir-up (0)
+move player-01 pos-06-07 pos-06-06 dir-up (0)
+push-to-nongoal player-01 stone-01 pos-06-06 pos-05-06 pos-04-06 dir-left (1)
+move player-01 pos-05-06 pos-05-07 dir-down (0)
+push-to-nongoal player-01 stone-02 pos-05-07 pos-04-07 pos-03-07 dir-left (1)
+move player-01 pos-04-07 pos-04-08 dir-down (0)
+move player-01 pos-04-08 pos-03-08 dir-left (0)
+push-to-nongoal player-01 stone-02 pos-03-08 pos-03-07 pos-03-06 dir-up (1)
+push-to-goal player-01 stone-02 pos-03-07 pos-03-06 pos-03-05 dir-up (1)
+push-to-nongoal player-01 stone-02 pos-03-06 pos-03-05 pos-03-04 dir-up (1)
+push-to-goal player-01 stone-02 pos-03-05 pos-03-04 pos-03-03 dir-up (1)
+move player-01 pos-03-04 pos-03-05 dir-down (0)
+move player-01 pos-03-05 pos-03-06 dir-down (0)
+move player-01 pos-03-06 pos-03-07 dir-down (0)
+move player-01 pos-03-07 pos-04-07 dir-right (0)
+move player-01 pos-04-07 pos-05-07 dir-right (0)
+move player-01 pos-05-07 pos-05-06 dir-up (0)
+push-to-nongoal player-01 stone-01 pos-05-06 pos-04-06 pos-03-06 dir-left (1)
+move player-01 pos-04-06 pos-04-07 dir-down (0)
+move player-01 pos-04-07 pos-03-07 dir-left (0)
+push-to-goal player-01 stone-01 pos-03-07 pos-03-06 pos-03-05 dir-up (1)
+[t=46.3472s, 72036 KB] Plan length: 100 step(s).
+[t=46.3472s, 72036 KB] Plan cost: 31
+[t=46.3472s, 72036 KB] Expanded 985043 state(s).
+[t=46.3472s, 72036 KB] Reopened 0 state(s).
+[t=46.3472s, 72036 KB] Evaluated 1075779 state(s).
+[t=46.3472s, 72036 KB] Evaluations: 1075779
+[t=46.3472s, 72036 KB] Generated 2677027 state(s).
+[t=46.3472s, 72036 KB] Dead ends: 77419 state(s).
+[t=46.3472s, 72036 KB] Expanded until last jump: 980214 state(s).
+[t=46.3472s, 72036 KB] Reopened until last jump: 0 state(s).
+[t=46.3472s, 72036 KB] Evaluated until last jump: 1070521 state(s).
+[t=46.3472s, 72036 KB] Generated until last jump: 2663209 state(s).
+[t=46.3472s, 72036 KB] Number of registered states: 1075779
+[t=46.3472s, 72036 KB] Closed list load factor: 1075779/2097151 = 0.512972
+[t=46.3472s, 72036 KB] Search time: 44.4629s
+[t=46.3472s, 72036 KB] Total time: 46.3472s
+Solution found.
+Peak memory: 72036 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 46.50s

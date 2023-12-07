@@ -1,0 +1,118 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/downward6/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-1.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 38 rules.
+Computing model... [0.010s CPU, 0.010s wall-clock]
+632 relevant atoms
+1048 auxiliary atoms
+1680 final queue length
+1905 total queue pushes
+Completing instantiation... [0.000s CPU, 0.004s wall-clock]
+Instantiating: [0.020s CPU, 0.020s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.010s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.003s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+42 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.009s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.005s wall-clock]
+162 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+37 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.002s wall-clock]
+Reordering and filtering variables...
+28 of 28 variables necessary.
+23 of 26 mutex groups necessary.
+114 of 114 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 28
+Translator derived variables: 0
+Translator facts: 111
+Translator goal facts: 2
+Translator mutex groups: 23
+Translator total mutex groups size: 84
+Translator operators: 114
+Translator axioms: 0
+Translator task size: 1071
+Translator peak memory: 179624 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [0.050s CPU, 0.041s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/downward6/builds/release/bin/downward --search 'astar(cea(verbosity=normal, transform=no_transform(), cache_estimates=true))' --internal-plan-file /work/bharath/sokoban/sokoban_results/context_enhanced_additive/plan-1.txt < output.sas
+[t=0.00231315s, 18652 KB] reading input...
+[t=0.00358484s, 18792 KB] done reading input!
+[t=0.0052513s, 19048 KB] Initializing context-enhanced additive heuristic...
+[t=0.0060066s, 19048 KB] Building successor generator...done!
+[t=0.00616265s, 19048 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.00618739s, 19048 KB] time for successor generation creation: 7.252e-05s
+[t=0.00621887s, 19048 KB] Variables: 28
+[t=0.00624617s, 19048 KB] FactPairs: 111
+[t=0.00627015s, 19048 KB] Bytes per state: 8
+[t=0.00631203s, 19048 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.00646796s, 19048 KB] New best heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 13
+[t=0.00649947s, 19048 KB] g=0, 1 evaluated, 0 expanded
+[t=0.00652546s, 19048 KB] f = 13, 1 evaluated, 0 expanded
+[t=0.00655544s, 19048 KB] Initial heuristic value for cea(verbosity=normal,transform=no_transform(),cache_estimates=true): 13
+[t=0.00658022s, 19048 KB] pruning method: none
+[t=0.00714142s, 19176 KB] Completely explored state space -- no solution!
+[t=0.00717542s, 19176 KB] Actual search time: 0.000593755s
+[t=0.00720201s, 19176 KB] Expanded 17 state(s).
+[t=0.00720201s, 19176 KB] Reopened 0 state(s).
+[t=0.00720201s, 19176 KB] Evaluated 20 state(s).
+[t=0.00720201s, 19176 KB] Evaluations: 20
+[t=0.00720201s, 19176 KB] Generated 43 state(s).
+[t=0.00720201s, 19176 KB] Dead ends: 3 state(s).
+[t=0.00720201s, 19176 KB] Expanded until last jump: 0 state(s).
+[t=0.00720201s, 19176 KB] Reopened until last jump: 0 state(s).
+[t=0.00720201s, 19176 KB] Evaluated until last jump: 1 state(s).
+[t=0.00720201s, 19176 KB] Generated until last jump: 0 state(s).
+[t=0.00720201s, 19176 KB] Number of registered states: 20
+[t=0.00720201s, 19176 KB] Int hash set load factor: 20/32 = 0.625
+[t=0.00720201s, 19176 KB] Int hash set resizes: 5
+[t=0.00720201s, 19176 KB] Search time: 0.00089176s
+[t=0.00720201s, 19176 KB] Total time: 0.00720201s
+Search stopped without finding a solution.
+Peak memory: 19176 KB
+Remove intermediate file output.sas
+search exit code: 12
+
+Driver aborting after search
+INFO     Planner time: 0.13s

@@ -1,0 +1,176 @@
+INFO     planner time limit: None
+INFO     planner memory limit: 8192 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: 8192 MB
+INFO     translator command line string: /work/apps/python3/anaconda/2021.11/bin/python /work/bharath/rubiks_cube/scorpion3/builds/release/bin/translate/translate.py /work/bharath/sokoban/domain.pddl /work/bharath/sokoban/sokoban_problem_files/instance-5.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.010s CPU, 0.002s wall-clock]
+Generated 38 rules.
+Computing model... [0.020s CPU, 0.027s wall-clock]
+1681 relevant atoms
+2304 auxiliary atoms
+3985 final queue length
+6389 total queue pushes
+Completing instantiation... [0.040s CPU, 0.037s wall-clock]
+Instantiating: [0.070s CPU, 0.069s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.010s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.003s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+44 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.012s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.001s wall-clock]
+Translating task: [0.040s CPU, 0.040s wall-clock]
+1464 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+9 propositions removed
+Detecting unreachable propositions: [0.020s CPU, 0.022s wall-clock]
+Reordering and filtering variables...
+53 of 53 variables necessary.
+36 of 45 mutex groups necessary.
+888 of 888 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.010s CPU, 0.009s wall-clock]
+Translator variables: 53
+Translator derived variables: 0
+Translator facts: 412
+Translator goal facts: 8
+Translator mutex groups: 36
+Translator total mutex groups size: 360
+Translator operators: 888
+Translator axioms: 0
+Translator task size: 8465
+Translator peak memory: 183976 KB
+Writing output... [0.010s CPU, 0.008s wall-clock]
+Done! [0.160s CPU, 0.165s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: 8192 MB
+INFO     search command line string: /work/bharath/rubiks_cube/scorpion3/builds/release/bin/downward --search 'astar(maximize([projections(systematic(3), create_complete_transition_system=true)]))' --internal-plan-file /work/bharath/sokoban/sokoban_results/max-systematic-pdb/plan-5.txt < output.sas
+[t=4.2281e-05s, 18452 KB] reading input...
+[t=0.00876777s, 19064 KB] done reading input!
+Warning: plugin diverse_potentials already has argument verbosity
+Warning: plugin ipdb already has argument verbosity
+[t=0.01083s, 19456 KB] Compute patterns
+[t=0.0108752s, 19456 KB] Generating patterns using: systematic pattern collection generator
+[t=0.010907s, 19456 KB] building causal graph...done! [t=0.00118927s]
+[t=0.0175235s, 21384 KB] Found 8008 SGA patterns.
+[t=0.0457918s, 21848 KB] Found 9044 interesting patterns.
+[t=0.0479732s, 21848 KB] systematic pattern collection generator number of patterns: 9044
+[t=0.048177s, 21848 KB] systematic pattern collection generator total PDB size: 593872
+[t=0.0484278s, 21848 KB] systematic pattern collection generator computation time: 0.037068s
+[t=0.048462s, 21848 KB] Number of patterns: 9044
+[t=0.0484869s, 21848 KB] Maximum pattern size: 3
+[t=0.0485112s, 21848 KB] Time for computing patterns: 0.0377049s
+[t=0.0485359s, 21848 KB] Build projections
+[t=26.659s, 379544 KB] Time for building projections: 26.6106s
+[t=26.6592s, 379544 KB] Number of projections: 9044
+[t=26.6593s, 379544 KB] Number of states in projections: 593872
+[t=26.6594s, 379884 KB] Abstractions: 9044
+[t=26.6594s, 379884 KB] Abstractions per generator: [9044]
+[t=26.9324s, 386728 KB] Building successor generator...done!
+[t=26.9333s, 386728 KB] peak memory difference for successor generator creation: 0 KB
+[t=26.9333s, 386728 KB] time for successor generation creation: 0.000555181s
+[t=26.9333s, 386728 KB] Variables: 53
+[t=26.9334s, 386728 KB] FactPairs: 412
+[t=26.9334s, 386728 KB] Bytes per state: 16
+[t=26.9338s, 386728 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=26.9344s, 386728 KB] New best heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 2
+[t=26.9344s, 386728 KB] g=0, 1 evaluated, 0 expanded
+[t=26.9345s, 386728 KB] f = 2, 1 evaluated, 0 expanded
+[t=26.9345s, 386728 KB] Initial heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 2
+[t=26.9345s, 386728 KB] pruning method: none
+[t=26.94s, 386728 KB] f = 3, 32 evaluated, 24 expanded
+[t=26.985s, 386728 KB] f = 4, 296 evaluated, 224 expanded
+[t=27.2596s, 386728 KB] f = 5, 2016 evaluated, 1520 expanded
+[t=28.2606s, 386728 KB] f = 6, 8348 evaluated, 6544 expanded
+[t=31.3986s, 386728 KB] f = 7, 28016 evaluated, 22528 expanded
+[t=39.9934s, 386728 KB] f = 8, 82352 evaluated, 66544 expanded
+[t=42.6407s, 386728 KB] New best heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 1
+[t=42.6409s, 386728 KB] g=7, 102013 evaluated, 73202 expanded
+[t=42.6443s, 386728 KB] New best heuristic value for maximize(list(projections(systematic(3), create_complete_transition_system = true))): 0
+[t=42.6443s, 386728 KB] g=8, 102036 evaluated, 73215 expanded
+[t=42.6444s, 386728 KB] Solution found!
+[t=42.6444s, 386728 KB] Actual search time: 15.7099s
+move player-01 pos-2-2 pos-2-3 dir-down (0)
+move player-01 pos-2-3 pos-2-4 dir-down (0)
+push-to-goal player-01 stone-03 pos-2-4 pos-3-4 pos-4-4 dir-right (1)
+push-to-goal player-01 stone-05 pos-3-4 pos-3-5 pos-3-6 dir-down (1)
+move player-01 pos-3-5 pos-3-4 dir-up (0)
+move player-01 pos-3-4 pos-3-3 dir-up (0)
+move player-01 pos-3-3 pos-3-2 dir-up (0)
+move player-01 pos-3-2 pos-4-2 dir-right (0)
+move player-01 pos-4-2 pos-5-2 dir-right (0)
+push-to-goal player-01 stone-02 pos-5-2 pos-5-3 pos-5-4 dir-down (1)
+push-to-goal player-01 stone-01 pos-5-3 pos-4-3 pos-3-3 dir-left (1)
+move player-01 pos-4-3 pos-5-3 dir-right (0)
+move player-01 pos-5-3 pos-6-3 dir-right (0)
+move player-01 pos-6-3 pos-7-3 dir-right (0)
+move player-01 pos-7-3 pos-7-4 dir-down (0)
+move player-01 pos-7-4 pos-7-5 dir-down (0)
+push-to-goal player-01 stone-06 pos-7-5 pos-6-5 pos-5-5 dir-left (1)
+move player-01 pos-6-5 pos-6-6 dir-down (0)
+move player-01 pos-6-6 pos-6-7 dir-down (0)
+move player-01 pos-6-7 pos-5-7 dir-left (0)
+move player-01 pos-5-7 pos-4-7 dir-left (0)
+push-to-goal player-01 stone-07 pos-4-7 pos-4-6 pos-4-5 dir-up (1)
+push-to-goal player-01 stone-08 pos-4-6 pos-5-6 pos-6-6 dir-right (1)
+move player-01 pos-5-6 pos-5-7 dir-down (0)
+move player-01 pos-5-7 pos-6-7 dir-right (0)
+move player-01 pos-6-7 pos-7-7 dir-right (0)
+move player-01 pos-7-7 pos-7-6 dir-up (0)
+move player-01 pos-7-6 pos-7-5 dir-up (0)
+move player-01 pos-7-5 pos-6-5 dir-left (0)
+push-to-goal player-01 stone-04 pos-6-5 pos-6-4 pos-6-3 dir-up (1)
+[t=42.6444s, 386728 KB] Plan length: 30 step(s).
+[t=42.6444s, 386728 KB] Plan cost: 8
+[t=42.6444s, 386728 KB] Expanded 73216 state(s).
+[t=42.6444s, 386728 KB] Reopened 0 state(s).
+[t=42.6444s, 386728 KB] Evaluated 102036 state(s).
+[t=42.6444s, 386728 KB] Evaluations: 102036
+[t=42.6444s, 386728 KB] Generated 210194 state(s).
+[t=42.6444s, 386728 KB] Dead ends: 10044 state(s).
+[t=42.6444s, 386728 KB] Expanded until last jump: 66544 state(s).
+[t=42.6444s, 386728 KB] Reopened until last jump: 0 state(s).
+[t=42.6444s, 386728 KB] Evaluated until last jump: 82352 state(s).
+[t=42.6444s, 386728 KB] Generated until last jump: 188024 state(s).
+[t=42.6444s, 386728 KB] Number of registered states: 102036
+[t=42.6444s, 386728 KB] Closed list load factor: 102036/131071 = 0.778479
+[t=42.6444s, 386728 KB] Search time: 15.7106s
+[t=42.6444s, 386728 KB] Total time: 42.6444s
+Solution found.
+Peak memory: 386728 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 42.92s
